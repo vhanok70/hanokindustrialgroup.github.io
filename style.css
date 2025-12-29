@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: #222;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0b5ed7;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0b5ed7, #084298);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.tagline {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+  background: #ffffff;
+  color: #0b5ed7;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background: #e6e6e6;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+.section h2 {
+  color: #0b5ed7;
+  margin-bottom: 20px;
+}
+
+/* PRODUCTS */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: #f7f7f7;
+  padding: 30px;
+  border-left: 4px solid #0b5ed7;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* FORM */
+.form {
+  display: grid;
+  gap: 15px;
+}
+
+.form input, .form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b5ed7;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ANIMATIONS */
+.fade-in { animation: fadeIn 1s ease-in-out; }
+.reveal { animation: slideUp 1s ease-in-out; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
