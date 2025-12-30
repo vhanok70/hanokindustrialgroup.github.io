@@ -70,20 +70,25 @@ nav{
   cursor:pointer;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO – FINAL FIX ===== */
 .hero-realistic{
-  width:100%;
+  width:100vw;              /* 🔥 FORCE full viewport width */
   min-height:75vh;
+
   background:
-    linear-gradient(rgba(10,25,47,0.65),rgba(10,25,47,0.65)),
+    linear-gradient(rgba(10,25,47,0.65), rgba(10,25,47,0.65)),
     url("ship-hero.png");
   background-size:cover;
   background-position:center;
+  background-repeat:no-repeat;
+
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+
   padding:120px 20px 60px;
+  margin:0;
   color:#fff;
 }
 
@@ -102,8 +107,7 @@ nav{
 
 /* ================= ABOUT ================= */
 .about-section{
-  background:var(--light);
-  padding:90px 20px;
+  background:var(--light);  padding:90px 20px;
 }
 
 .about-block{
@@ -280,4 +284,8 @@ footer{
   .about-block{
     padding:35px 25px;
   }
+}
+html, body{
+  width:100%;
+  overflow-x:hidden;
 }
