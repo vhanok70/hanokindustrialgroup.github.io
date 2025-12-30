@@ -95,7 +95,7 @@ nav.sticky {
 }
 
 /* ================= HERO (REAL PHOTO) ================= */
-.hero {
+.hero-realistic {
   min-height: 100vh;
   background:
     linear-gradient(rgba(10,25,47,0.65), rgba(10,25,47,0.65)),
@@ -103,6 +103,7 @@ nav.sticky {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +127,7 @@ nav.sticky {
 .btn {
   display: inline-block;
   padding: 14px 36px;
-  background: var(--primary-gold);
+  background: var(--primarygold);
   color: var(--deep-navy);
   font-weight: 700;
   border-radius: 6px;
