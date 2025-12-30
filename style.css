@@ -440,3 +440,60 @@ footer {
     padding: 60px 20px;
   }
 }
+/* ===== FIX ABOUT SECTION MOBILE ===== */
+@media (max-width: 768px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about img {
+    order: 1;
+    width: 100%;
+    box-shadow: 8px 8px 0 var(--gold);
+  }
+
+  .about div {
+    order: 2;
+    text-align: left;
+  }
+}
+/* ===== FIX COMMODITIES MOBILE GRID ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+/* ===== SECTION VISUAL SEPARATION ===== */
+section {
+  position: relative;
+}
+
+.products {
+  background: #f4f6f9;
+}
+
+.about {
+  background: #ffffff;
+}
+
+.contact {
+  background: var(--navy);
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+  }
+}
