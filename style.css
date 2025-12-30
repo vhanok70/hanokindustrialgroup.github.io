@@ -704,3 +704,45 @@ footer {
 .content-block li{
   margin-bottom:8px;
 }
+/* ===== ABOUT SECTION (EXPORT COMPANY STYLE) ===== */
+.about-section {
+  background: #ffffff;
+  padding: 80px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0a192f;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
