@@ -748,37 +748,4 @@ footer {
     padding: 120px 20px;
   }
 }
-/* ===== HIGHLIGHT GLOBAL COMMODITY PORTFOLIO ===== */
-.section-title {
-  position: relative;
-  display: inline-block;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #0a192f;
-  padding-bottom: 18px;
-  margin-bottom: 40px;
-}
 
-/* Gold underline */
-.section-title::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 90px;
-  height: 4px;
-  background: #d4af37;
-  border-radius: 2px;
-}
-
-/* Light background highlight block */
-.section-title-wrap {
-  text-align: center;
-  padding: 70px 20px 20px;
-  background: linear-gradient(
-    to bottom,
-    rgba(212, 175, 55, 0.08),
-    rgba(255, 255, 255, 0)
-  );
-}
