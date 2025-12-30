@@ -390,3 +390,18 @@ footer {
     padding: 60px 6%;
   }
 }
+/* MOBILE MENU FIX */
+.menu-btn {
+  position: relative;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    z-index: 1000;
+  }
+}
