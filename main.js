@@ -116,3 +116,8 @@ const HanokUtils = {
 
 // Example future usage:
 // HanokUtils.scrollToTop();
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
