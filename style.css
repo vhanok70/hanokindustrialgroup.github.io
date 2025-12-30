@@ -338,3 +338,79 @@ img {
   width: 100%;
   padding: 70px 20px;
 }
+/* ===== OUR COMMODITIES (EXACT CIRCLED STYLE) ===== */
+
+.products {
+  background: #f5f7fa;
+  padding: 90px 6%;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-content {
+  padding: 22px;
+}
+
+.product-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a192f;
+  margin-bottom: 8px;
+}
+
+.product-content p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background: #d4af37;
+  color: #0a192f;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+}
