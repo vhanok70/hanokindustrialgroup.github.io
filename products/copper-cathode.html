@@ -1,73 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Copper Cathode | Hanok Industrial Group</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <nav id="navbar">
   <div class="logo">HANOK <span>INDUSTRIAL</span></div>
 
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#about">About</a></li>
     <li><a href="../index.html#products">Commodities</a></li>
     <li><a href="../index.html#contact">Contact</a></li>
   </ul>
 
-  <div class="menu-btn">
+  <div class="menu-btn" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero-realistic" style="
-  background:
-    linear-gradient(rgba(10,25,47,0.75), rgba(10,25,47,0.75)),
-    url('../images/copper-cathode.png') center/cover no-repeat;
-">
+<!-- ================= HERO ================= -->
+<section class="hero-realistic">
   <div class="hero-content">
-    <h1>COPPER CATHODE</h1>
-    <p>GRADE A · ELECTROLYTIC · 99.99% PURITY</p>
+    <h1>Copper Cathode</h1>
+    <p>GRADE A • ELECTROLYTIC • 99.99% PURITY</p>
   </div>
 </section>
 
-<!-- DETAILS -->
-<section class="about">
-  <div>
-    <h2>Copper Cathode – Grade A</h2>
+<!-- ================= PRODUCT CONTENT ================= -->
+<section class="product-page">
 
-    <p>
-      Hanok Industrial Group supplies high-purity Grade A copper cathodes
-      sourced from verified global smelters.
-    </p>
+  <div class="product-grid">
 
-    <ul>
-      <li><strong>Purity:</strong> 99.99%</li>
-      <li><strong>Standard:</strong> LME Grade A</li>
-      <li><strong>Form:</strong> Electrolytic Copper Cathode</li>
-      <li><strong>Applications:</strong> Electrical, industrial & manufacturing</li>
-      <li><strong>Packing:</strong> Bundled / palletized</li>
-    </ul>
+    <!-- LEFT COLUMN -->
+    <div class="product-left">
 
-    <a href="../index.html#contact" class="btn">Send Inquiry</a>
+      <!-- Product Overview -->
+      <div class="info-card">
+        <h3>Product Overview</h3>
+        <p>
+          Hanok Industrial Group supplies high-purity <strong>Grade A Copper Cathodes</strong>
+          sourced from internationally approved smelters. Our copper cathodes
+          comply with global quality standards and are suitable for electrical,
+          industrial, and manufacturing applications.
+        </p>
+
+        <h4>Typical Applications</h4>
+        <ul>
+          <li>Electrical & conductor manufacturing</li>
+          <li>Wire & cable production</li>
+          <li>Industrial components</li>
+          <li>Alloy & metal processing</li>
+        </ul>
+      </div>
+
+      <!-- Chemical Composition -->
+      <div class="info-card">
+        <h3>Chemical Composition (Typical)</h3>
+        <table>
+          <tr><td>Copper (Cu)</td><td>99.99% Min</td></tr>
+          <tr><td>Oxygen (O)</td><td>0.04% Max</td></tr>
+          <tr><td>Other Elements</td><td>0.01% Max</td></tr>
+        </table>
+      </div>
+
+      <!-- Packaging -->
+      <div class="info-card">
+        <h3>Packaging & Logistics</h3>
+        <ul>
+          <li>Form: Electrolytic Copper Cathode</li>
+          <li>Bundling: Strapped / Palletized</li>
+          <li>Packaging Type: Export-grade</li>
+          <li>Shipping Ports: Any major port as per contract</li>
+        </ul>
+      </div>
+
+      <!-- Inspection -->
+      <div class="info-card">
+        <h3>Inspection & Compliance</h3>
+        <ul>
+          <li>Quality Inspection: SGS / BV / Intertek (optional)</li>
+          <li>Certificate of Analysis (COA): Provided</li>
+          <li>Certificate of Origin (COO): Provided</li>
+          <li>Compliance: LME Grade A</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="product-right">
+
+      <!-- Technical Specs -->
+      <div class="info-card">
+        <h3>Technical Specifications</h3>
+        <table>
+          <tr><td>Grade</td><td>LME Grade A</td></tr>
+          <tr><td>Purity</td><td>99.99% Min</td></tr>
+          <tr><td>Form</td><td>Electrolytic Cathode</td></tr>
+          <tr><td>Standard</td><td>LME / ASTM</td></tr>
+          <tr><td>Origin</td><td>As per contract</td></tr>
+          <tr><td>MOQ</td><td>1500 MT</td></tr>
+          <tr><td>Delivery Terms</td><td>FOB / CIF / CFR</td></tr>
+        </table>
+
+        <a href="../index.html#contact" class="btn" style="margin-top:20px;">
+          Send Buyer Inquiry
+        </a>
+      </div>
+
+    </div>
+
   </div>
-
-  <img src="../images/copper-cathode.png" alt="Copper Cathode Grade A">
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer>
   © 2025 Hanok Industrial Group. All Rights Reserved.
 </footer>
 
+<!-- ================= JS ================= -->
 <script src="../main.js"></script>
+
 </body>
 </html>
