@@ -99,9 +99,10 @@ nav.sticky {
   min-height: 100vh;
   background:
     linear-gradient(rgba(10,25,47,0.65), rgba(10,25,47,0.65)),
-    url("https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=2000&q=80");
+    url("ship-hero.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
