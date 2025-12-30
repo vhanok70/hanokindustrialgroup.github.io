@@ -1,54 +1,313 @@
+/* HANOK INDUSTRIAL GROUP - MASTER STYLESHEET
+    Version: 1.0.0
+    Description: Professional Industrial Metal Trading Platform
+*/
 
+/* 1. GLOBAL VARIABLES & RESET */
 :root {
-    --gold: #D4AF37;
-    --navy: #0a192f;
-    --white: #ffffff;
+    --primary-gold: #D4AF37;
+    --gold-hover: #f1c40f;
+    --deep-navy: #0a192f;
+    --navy-light: #112240;
+    --slate: #8892b0;
+    --white: #e6f1ff;
+    --pure-white: #ffffff;
+    --bg-light: #f4f7f6;
+    --transition-fast: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition-slow: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background: #f4f4f4; overflow-x: hidden; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
 
-/* Desktop Navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--pure-white);
+    color: var(--deep-navy);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* 2. REUSABLE COMPONENTS */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn-main {
+    padding: 18px 35px;
+    background: var(--primary-gold);
+    color: var(--deep-navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-main:hover {
+    background: var(--pure-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* 3. NAVIGATION BAR */
 nav {
-    position: fixed; width: 100%; padding: 20px 8%;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(10, 25, 47, 0.95); z-index: 1000; border-bottom: 2px solid var(--gold);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-slow);
 }
 
-.logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--white); text-transform: uppercase; }
-.logo span { color: var(--gold); }
-.nav-links { display: flex; list-style: none; }
-.nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; }
+nav.sticky {
+    background: rgba(10, 25, 47, 0.95);
+    padding: 15px 8%;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--primary-gold);
+}
 
-/* Hero with CONTAINER SHIP BACKGROUND */
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: var(--pure-white);
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary-gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 40px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: var(--transition-fast);
+}
+
+.nav-links a:hover {
+    color: var(--primary-gold);
+}
+
+/* 4. HERO SECTION (CONTAINER SHIP) */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), 
-                url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070');
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
+                url('https://images.unsplash.com/photo-1570114912903-888e2239634e?q=80&w=2070');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--pure-white);
 }
 
-.hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); text-transform: uppercase; }
-
-/* Grid Layout */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 8%; }
-
-.card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; }
-.card:hover { transform: translateY(-10px); }
-.card img { width: 100%; height: 250px; object-fit: cover; }
-
-.details-pane { display: none; padding: 15px; background: #f9f9f9; border-left: 4px solid var(--gold); margin-top: 10px; }
-
-/* Buttons */
-.btn-cta, .read-more-btn, .submit-btn {
-    background: var(--gold); color: var(--navy); border: none; padding: 12px 25px; 
-    font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 5px;
+.hero-content h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
-/* MOBILE VERSION */
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--primary-gold);
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+}
+
+/* 5. PRODUCT CARDS & GRID */
+.products {
+    padding: 120px 0;
+    background: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--primary-gold);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 0 8%;
+}
+
+.card {
+    background: var(--pure-white);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: var(--transition-fast);
+    border-bottom: 5px solid transparent;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    border-bottom: 5px solid var(--primary-gold);
+    box-shadow: var(--shadow);
+}
+
+.card-img {
+    height: 260px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 35px;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--deep-navy);
+}
+
+.read-more-btn {
+    margin-top: 25px;
+    background: none;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+    padding: 10px 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.read-more-btn:hover {
+    background: var(--primary-gold);
+    color: var(--deep-navy);
+}
+
+/* 6. CONTACT SECTION */
+.contact {
+    padding: 120px 8%;
+    background: var(--deep-navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    color: var(--pure-white);
+}
+
+.contact-info h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--primary-gold);
+    font-family: 'Oswald', sans-serif;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.info-box i {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    margin-right: 20px;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: var(--navy-light);
+    border: 1px solid #233554;
+    color: var(--white);
+    font-family: inherit;
+}
+
+.contact-form input:focus {
+    border-color: var(--primary-gold);
+}
+
+/* 7. ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.details-pane {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* 8. RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero h1 { font-size: 3rem; }
-    .grid { grid-template-columns: 1fr; }
+    nav {
+        padding: 20px 5%;
+    }
+    .nav-links {
+        display: none; /* Mobile Menu Logic would go here */
+    }
 }
+
