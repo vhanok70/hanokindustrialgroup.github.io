@@ -1,271 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hanok Industrial Group - Leading Global Trader of Aluminum Ingots A7, Copper Cathodes Grade A, and Industrial Scraps.">
-    <title>Hanok Industrial Group | Global Metal Commodities</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hanok Industrial Group – Global trader and supplier of Aluminium Ingots A7, Copper Cathode Grade A, and Industrial Scrap.">
+<title>Hanok Industrial Group | Global Metal Commodities</title>
 
-    <style>
-        /* CORE STYLES - Integrated for instant deployment */
-        :root {
-            --gold: #D4AF37;
-            --dark-navy: #0a192f;
-            --slate: #8892b0;
-            --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.1);
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #f9f9f9; color: var(--dark-navy); overflow-x: hidden; line-height: 1.6; }
-        
-        /* Navigation */
-        nav {
-            position: fixed; top: 0; width: 100%; display: flex;
-            justify-content: space-between; align-items: center;
-            padding: 20px 8%; z-index: 2000; transition: 0.5s;
-            background: transparent;
-        }
-        nav.sticky { background: var(--dark-navy); padding: 15px 8%; border-bottom: 2px solid var(--gold); }
-        .logo { font-family: 'Oswald', sans-serif; font-size: 1.8rem; color: var(--white); text-transform: uppercase; letter-spacing: 2px; }
-        .logo span { color: var(--gold); }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 35px; }
-        .nav-links a { text-decoration: none; color: var(--white); font-weight: 400; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
-        .nav-links a:hover { color: var(--gold); }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        /* Hero Section */
-        .hero {
-            height: 100vh; width: 100%;
-            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
-                        url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070'); 
-            background-size: cover; background-position: center;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
-        }
-        .hero-content h1 { font-family: 'Oswald', sans-serif; font-size: 5rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 15px; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px; color: var(--gold); font-weight: bold; }
-        .btn-cta { 
-            padding: 15px 40px; background: var(--gold); color: var(--dark-navy); 
-            text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.4s;
-            display: inline-block; text-transform: uppercase;
-        }
-        .btn-cta:hover { background: var(--white); transform: scale(1.05); }
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        /* About Section */
-        .about { padding: 100px 8%; display: flex; align-items: center; gap: 50px; background: #fff; }
-        .about-text { flex: 1; }
-        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
-        .about-text p { margin-bottom: 20px; color: #555; }
-        .about-img { flex: 1; position: relative; }
-        .about-img img { width: 100%; border-radius: 10px; box-shadow: 20px 20px 0 var(--gold); }
+<style>
+/* ================= ROOT ================= */
+:root{
+  --gold:#D4AF37;
+  --navy:#0a192f;
+  --navy-dark:#050c16;
+  --gray:#f2f4f8;
+  --text:#1f2933;
+  --muted:#6b7280;
+  --white:#ffffff;
+}
 
-        /* Product Grid */
-        .products { padding: 100px 8%; background: #f0f2f5; text-align: center; }
-        .section-title { font-size: 3rem; margin-bottom: 50px; font-family: 'Oswald', sans-serif; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        
-        .card { 
-            background: #fff; border-radius: 15px; overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.5s; position: relative;
-        }
-        .card:hover { transform: translateY(-15px); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-body { padding: 30px; text-align: left; }
-        .card-body h3 { font-size: 1.5rem; margin-bottom: 15px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
-        
-        .details-pane { display: none; margin-top: 15px; font-size: 0.85rem; background: #f9f9f9; padding: 15px; border-radius: 5px; }
-        .read-more-btn { 
-            margin-top: 20px; background: transparent; border: 1px solid var(--gold); 
-            color: var(--gold); padding: 10px 20px; cursor: pointer; transition: 0.3s;
-        }
-        .read-more-btn:hover { background: var(--gold); color: #fff; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
 
-        /* Contact Section */
-        .contact { padding: 100px 8%; background: var(--dark-navy); color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-        .contact-details h2 { font-size: 3rem; margin-bottom: 30px; color: var(--gold); }
-        .contact-item { margin-bottom: 25px; display: flex; align-items: center; gap: 20px; }
-        .contact-item i { font-size: 1.5rem; color: var(--gold); }
-        
-        .contact-form { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 10px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group input, .form-group textarea { 
-            width: 100%; padding: 15px; background: transparent; border: 1px solid #333; 
-            color: #fff; border-radius: 5px; outline: none;
-        }
-        .form-group input:focus { border-color: var(--gold); }
-        .submit-btn { 
-            width: 100%; padding: 15px; background: var(--gold); border: none; 
-            font-weight: bold; cursor: pointer; text-transform: uppercase; 
-        }
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:transparent;
+  z-index:1000;
+  transition:.4s;
+}
+nav.sticky{
+  background:var(--navy);
+  border-bottom:2px solid var(--gold);
+  padding:14px 8%;
+}
+.logo{
+  font-family:'Oswald',sans-serif;
+  font-size:1.6rem;
+  color:#fff;
+  letter-spacing:2px;
+}
+.logo span{color:var(--gold)}
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:35px;
+}
+.nav-links a{
+  color:#fff;
+  font-size:.9rem;
+  text-transform:uppercase;
+  transition:.3s;
+}
+.nav-links a:hover{color:var(--gold)}
+.menu-btn{
+  display:none;
+  font-size:1.5rem;
+  color:#fff;
+  cursor:pointer;
+}
 
-        footer { padding: 30px; text-align: center; background: #050c16; color: #8892b0; font-size: 0.8rem; }
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(rgba(10,25,47,.75),rgba(10,25,47,.75)),
+    url("https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:0 20px;
+}
+.hero h1{
+  font-family:'Oswald',sans-serif;
+  font-size:4.5rem;
+  letter-spacing:4px;
+}
+.hero p{
+  margin:20px 0 35px;
+  color:var(--gold);
+  font-weight:600;
+  letter-spacing:2px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 36px;
+  background:var(--gold);
+  color:var(--navy);
+  font-weight:700;
+  border-radius:5px;
+  transition:.3s;
+}
+.btn:hover{background:#fff;transform:scale(1.05)}
 
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .about, .contact { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-        }
-    </style>
+/* ================= SECTIONS ================= */
+section{padding:100px 8%}
+.section-title{
+  font-family:'Oswald',sans-serif;
+  font-size:2.8rem;
+  margin-bottom:50px;
+  text-align:center;
+}
+
+/* ================= ABOUT ================= */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.about img{
+  width:100%;
+  border-radius:10px;
+  box-shadow:20px 20px 0 var(--gold);
+}
+.about h2{
+  font-family:'Oswald',sans-serif;
+  font-size:2.2rem;
+  margin-bottom:20px;
+}
+.about p{color:#555;margin-bottom:18px}
+
+/* ================= PRODUCTS ================= */
+.products{background:var(--gray)}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+.card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  transition:.4s;
+}
+.card:hover{transform:translateY(-12px)}
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+.card-body{padding:28px}
+.card-body h3{
+  font-size:1.4rem;
+  border-bottom:2px solid var(--gold);
+  display:inline-block;
+  padding-bottom:6px;
+  margin-bottom:12px;
+}
+.details{
+  display:none;
+  background:#f7f7f7;
+  padding:15px;
+  border-radius:6px;
+  margin-top:15px;
+  font-size:.9rem;
+}
+.read-more{
+  margin-top:15px;
+  background:none;
+  border:1px solid var(--gold);
+  padding:8px 18px;
+  color:var(--gold);
+  cursor:pointer;
+  transition:.3s;
+}
+.read-more:hover{background:var(--gold);color:#fff}
+
+/* ================= CONTACT ================= */
+.contact{
+  background:var(--navy);
+  color:#fff;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+}
+.contact h2{
+  font-family:'Oswald',sans-serif;
+  font-size:2.6rem;
+  color:var(--gold);
+  margin-bottom:25px;
+}
+.contact-item{
+  display:flex;
+  gap:18px;
+  margin-bottom:20px;
+}
+.contact-item i{color:var(--gold);font-size:1.4rem}
+form{
+  background:rgba(255,255,255,.05);
+  padding:35px;
+  border-radius:10px;
+}
+input,textarea,select{
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+  background:transparent;
+  border:1px solid #333;
+  color:#fff;
+}
+button.submit{
+  width:100%;
+  padding:14px;
+  background:var(--gold);
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--navy-dark);
+  text-align:center;
+  padding:25px;
+  font-size:.85rem;
+  color:#aaa;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .about,.contact{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hero h1{font-size:2.6rem}
+  nav{padding:16px 6%}
+  .nav-links{
+    position:absolute;
+    top:70px;left:0;
+    width:100%;
+    background:var(--navy);
+    flex-direction:column;
+    display:none;
+  }
+  .nav-links.active{display:flex}
+  .nav-links li{text-align:center;padding:15px 0}
+  .menu-btn{display:block}
+}
+</style>
 </head>
+
 <body>
 
-    <nav id="navbar">
-        <div class="logo">HANOK <span>INDUSTRIAL</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Group</a></li>
-            <li><a href="#products">Commodities</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
+<nav id="navbar">
+  <div class="logo">HANOK <span>INDUSTRIAL</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Commodities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+</nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content" data-aos="zoom-in">
-            <h1>Global Metals & Minerals</h1>
-            <p>ALUMINUM A7 | COPPER CATHODE | INDUSTRIAL SCRAP</p>
-            <a href="#products" class="btn-cta">Explore Inventory</a>
+<section class="hero" id="home">
+  <div data-aos="zoom-in">
+    <h1>Global Metals & Minerals</h1>
+    <p>ALUMINIUM A7 • COPPER CATHODE • INDUSTRIAL SCRAP</p>
+    <a href="#products" class="btn">Explore Inventory</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div data-aos="fade-right">
+    <h2>Hanok Industrial Group</h2>
+    <p>Hanok Industrial Group is an India-based global trading house engaged in bulk procurement and export of non-ferrous metals.</p>
+    <p>We operate with strict quality standards, reliable logistics, and transparent trade practices.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1968" alt="">
+</section>
+
+<section class="products" id="products">
+  <h2 class="section-title" data-aos="fade-up">Our Commodities</h2>
+  <div class="grid">
+    <!-- Aluminium -->
+    <div class="card" data-aos="flip-left">
+      <img src="https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=1974">
+      <div class="card-body">
+        <h3>Aluminium Ingots A7</h3>
+        <p>99.7% purity aluminium sourced from global smelters.</p>
+        <div class="details" id="a1">
+          Purity: 99.7% • Form: 20–25kg • Origin: CIS / GCC
         </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="about-text" data-aos="fade-right">
-            <h2>Hanok Industrial Group</h2>
-            <p>Welcome to <strong>Hanok Industrial Group</strong>. We are a premier international trading house based in India, operating across the global metal supply chain. We specialize in the high-volume procurement and export of non-ferrous metals.</p>
-            <p>Our commitment to quality ensures that all commodities like our 99.7% Aluminum and 99.99% Copper Cathodes meet LME standards, providing our industrial partners with the reliability they need for large-scale manufacturing.</p>
-            <a href="#contact" class="btn-cta" style="padding: 10px 25px; font-size: 0.8rem;">Our Mandate</a>
+        <button class="read-more" onclick="toggle('a1')">Read More</button>
+      </div>
+    </div>
+    <!-- Copper -->
+    <div class="card" data-aos="flip-left">
+      <img src="https://images.unsplash.com/photo-1563290632-68a8397a6f23?q=80&w=2070">
+      <div class="card-body">
+        <h3>Copper Cathode</h3>
+        <p>Grade A electrolytic copper for industrial use.</p>
+        <div class="details" id="a2">
+          Purity: 99.99% • ASTM B115 • Palletized
         </div>
-        <div class="about-img" data-aos="fade-left">
-            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1968" alt="Industrial Metal">
+        <button class="read-more" onclick="toggle('a2')">Read More</button>
+      </div>
+    </div>
+    <!-- Scrap -->
+    <div class="card" data-aos="flip-left">
+      <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070">
+      <div class="card-body">
+        <h3>Industrial Scrap</h3>
+        <p>Ferrous & non-ferrous scrap for recycling.</p>
+        <div class="details" id="a3">
+          HMS 1/2 • Millberry • Bulk supply
         </div>
-    </section>
+        <button class="read-more" onclick="toggle('a3')">Read More</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="products" id="products">
-        <h2 class="section-title" data-aos="fade-up">Our Commodities</h2>
-        <div class="grid">
-            
-            <div class="card" data-aos="flip-left">
-                <img src="https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=1974" alt="Aluminum Ingots">
-                <div class="card-body">
-                    <h3>Aluminum Ingots A7</h3>
-                    <p>Standard purity 99.7%. Sourced from top-tier global smelters.</p>
-                    <div id="alu-more" class="details-pane">
-                        <p><strong>Specification:</strong> Al99.7% Standard</p>
-                        <p><strong>Form:</strong> 20kg - 25kg Ingots</p>
-                        <p><strong>Origin:</strong> CIS / GCC / Africa</p>
-                    </div>
-                    <button class="read-more-btn" onclick="showMore('alu-more')">Read More +</button>
-                </div>
-            </div>
+<section class="contact" id="contact">
+  <div data-aos="fade-right">
+    <h2>Contact Trade Desk</h2>
+    <div class="contact-item"><i class="fas fa-phone"></i> +91 770 2310 750</div>
+    <div class="contact-item"><i class="fas fa-envelope"></i> hanokglobaltrader@gmail.com</div>
+  </div>
+  <form data-aos="fade-left">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Corporate Email" required>
+    <select>
+      <option>Aluminium Ingots A7</option>
+      <option>Copper Cathode</option>
+      <option>Industrial Scrap</option>
+    </select>
+    <textarea rows="4" placeholder="Quantity / Port / Target Price"></textarea>
+    <button class="submit">Send Inquiry</button>
+  </form>
+</section>
 
-            <div class="card" data-aos="flip-left" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1563290632-68a8397a6f23?q=80&w=2070" alt="Copper Cathode">
-                <div class="card-body">
-                    <h3>Copper Cathode</h3>
-                    <p>Grade A 99.99% purity. High-conductivity electrolytic copper.</p>
-                    <div id="cop-more" class="details-pane">
-                        <p><strong>Specification:</strong> ASTM B115-00 Grade 1</p>
-                        <p><strong>Dimension:</strong> 914mm x 914mm x 12mm</p>
-                        <p><strong>Packaging:</strong> Palletized Bundles</p>
-                    </div>
-                    <button class="read-more-btn" onclick="showMore('cop-more')">Read More +</button>
-                </div>
-            </div>
+<footer>
+  © 2025 Hanok Industrial Group. All Rights Reserved.
+</footer>
 
-            <div class="card" data-aos="flip-left" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070" alt="Industrial Scrap">
-                <div class="card-body">
-                    <h3>Industrial Scraps</h3>
-                    <p>High-quality HMS 1/2 and copper wire scraps for recycling.</p>
-                    <div id="scrap-more" class="details-pane">
-                        <p><strong>Types:</strong> Millberry Copper Scrap, Aluminum Tense/Taint, HMS 1&2.</p>
-                        <p><strong>Volume:</strong> 500 MT - 5000 MT Monthly</p>
-                    </div>
-                    <button class="read-more-btn" onclick="showMore('scrap-more')">Read More +</button>
-                </div>
-            </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration:1000,once:true});
 
-        </div>
-    </section>
+window.addEventListener("scroll",()=>{
+  document.getElementById("navbar")
+    .classList.toggle("sticky",window.scrollY>100);
+});
 
-    <section class="contact" id="contact">
-        <div class="contact-details" data-aos="fade-right">
-            <h2>Get In Touch</h2>
-            <p>Contact our trade desk for formal quotations and procedures.</p>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <div>
-                    <p>Direct Phone</p>
-                    <strong>+91 770 2310 750</strong>
-                </div>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <p>Email Inquiry</p>
-                    <strong>hanokglobaltrader@gmail.com</strong>
-                </div>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-globe"></i>
-                <div>
-                    <p></p>
-                    <strong></strong>
-                </div>
-            </div>
-        </div>
+function toggle(id){
+  const el=document.getElementById(id);
+  el.style.display=el.style.display==="block"?"none":"block";
+}
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
-        <form class="contact-form" data-aos="fade-left">
-            <div class="form-group"><input type="text" placeholder="Your Name" required></div>
-            <div class="form-group"><input type="email" placeholder="Corporate Email" required></div>
-            <div class="form-group">
-                <select style="width: 100%; padding: 15px; background: transparent; color: #fff; border: 1px solid #333;">
-                    <option style="color: black;">Select Product</option>
-                    <option style="color: black;">Aluminum Ingots A7</option>
-                    <option style="color: black;">Copper Cathode Grade A</option>
-                    <option style="color: black;">Industrial Scraps</option>
-                </select>
-            </div>
-            <div class="form-group"><textarea rows="5" placeholder="Your Message (Quantity / Port / Target Price)"></textarea></div>
-            <button type="submit" class="submit-btn">Send Formal Inquiry</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Hanok Industrial Group. All Rights Reserved. | Managed via GitHub</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize Animations
-        AOS.init({ duration: 1000, once: true });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                nav.classList.add('sticky');
-            } else {
-                nav.classList.remove('sticky');
-            }
-        });
-
-        // Toggle Read More Details
-        function showMore(id) {
-            const element = document.getElementById(id);
-            if (element.style.display === "block") {
-                element.style.display = "none";
-            } else {
-                element.style.display = "block";
-                element.style.animation = "fadeIn 0.5s ease";
-            }
-        }
-    </script>
 </body>
 </html>
-
