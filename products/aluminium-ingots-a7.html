@@ -1,19 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Aluminium Ingots A7 | Hanok Industrial Group</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aluminium Ingots A7 (99.7% purity) supplied globally by Hanok Industrial Group. CIF / FOB export, bulk quantity available.">
+    <meta name="description" content="Aluminium Ingots A7 (99.7% purity) supplied globally by Hanok Industrial Group. CIF / FOB / CFR export, bulk quantity available.">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root{
@@ -31,7 +29,7 @@
             line-height:1.7;
         }
 
-        /* NAV */
+        /* HEADER */
         header{
             background:var(--navy);
             padding:15px 8%;
@@ -39,7 +37,7 @@
             justify-content:space-between;
             align-items:center;
         }
-        header a{
+        header nav a{
             color:var(--white);
             text-decoration:none;
             font-size:0.9rem;
@@ -56,9 +54,11 @@
         /* HERO */
         .hero{
             padding:120px 8% 80px;
-            background:linear-gradient(rgba(10,25,47,.85),rgba(10,25,47,.85)),
-            url("https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=2070");
+            background:
+              linear-gradient(rgba(10,25,47,.85),rgba(10,25,47,.85)),
+              url("https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=2070");
             background-size:cover;
+            background-position:center;
             color:var(--white);
         }
         .hero h1{
@@ -72,7 +72,7 @@
             letter-spacing:2px;
         }
 
-        /* CONTENT */
+        /* CONTAINER */
         .container{
             max-width:1200px;
             margin:auto;
@@ -89,22 +89,6 @@
             .grid{grid-template-columns:1fr}
         }
 
-        /* SPEC TABLE */
-        table{
-            width:100%;
-            border-collapse:collapse;
-            background:#fff;
-        }
-        table th,table td{
-            padding:14px;
-            border:1px solid #ddd;
-            text-align:left;
-        }
-        table th{
-            background:#f1f1f1;
-            width:35%;
-        }
-
         /* BOX */
         .box{
             background:#fff;
@@ -113,10 +97,27 @@
             box-shadow:0 10px 25px rgba(0,0,0,.05);
         }
 
+        /* TABLE */
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+            background:#fff;
+        }
+        table th, table td{
+            padding:14px;
+            border:1px solid #ddd;
+            text-align:left;
+        }
+        table th{
+            background:#f1f1f1;
+            width:40%;
+        }
+
         /* BUTTON */
         .btn{
             display:inline-block;
-            margin-top:20px;
+            margin-top:25px;
             padding:14px 28px;
             background:var(--gold);
             color:#000;
@@ -135,191 +136,98 @@
         }
     </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">HANOK <span>INDUSTRIAL</span></div>
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#products">Commodities</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="/">Home</a>
+        <a href="/#products">Commodities</a>
+        <a href="/#contact">Contact</a>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-    <h1 data-aos="fade-right">Aluminium Ingots A7</h1>
-    <p data-aos="fade-up">99.7% PURITY • GLOBAL EXPORT • BULK SUPPLY</p>
+    <h1>Aluminium Ingots A7</h1>
+    <p>99.7% PURITY · GLOBAL EXPORT · BULK SUPPLY</p>
 </section>
 
+<!-- CONTENT -->
 <section class="container">
     <div class="grid">
 
-        <!-- LEFT -->
-        <div data-aos="fade-up">
-            <div class="box">
-                <h2>Product Overview</h2>
-                <!-- ADDITIONAL PRODUCT INFORMATION -->
-<div class="box" data-aos="fade-up" style="margin-top:40px;">
+        <!-- LEFT COLUMN -->
+        <div class="box">
+            <h3>Product Overview</h3>
+            <p>
+                Hanok Industrial Group supplies <strong>Aluminium Ingots A7</strong>
+                with minimum purity of <strong>99.7%</strong>, sourced from
+                internationally approved smelters. Our aluminium ingots are widely
+                used across extrusion, rolling, casting, automotive, construction,
+                and industrial manufacturing sectors.
+            </p>
 
-    <h2>Chemical Composition (Typical)</h2>
+            <h4>Typical Applications</h4>
+            <ul>
+                <li>Aluminium extrusion & profiles</li>
+                <li>Automotive & aerospace components</li>
+                <li>Electrical & conductor manufacturing</li>
+                <li>General industrial castings</li>
+            </ul>
 
-    <table>
-        <tr><th>Aluminium (Al)</th><td>99.70% Min</td></tr>
-        <tr><th>Silicon (Si)</th><td>0.10% Max</td></tr>
-        <tr><th>Iron (Fe)</th><td>0.20% Max</td></tr>
-        <tr><th>Copper (Cu)</th><td>0.03% Max</td></tr>
-        <tr><th>Zinc (Zn)</th><td>0.07% Max</td></tr>
-        <tr><th>Others (Total)</th><td>0.10% Max</td></tr>
-    </table>
+            <h4>Chemical Composition (Typical)</h4>
+            <table>
+                <tr><th>Aluminium (Al)</th><td>99.70% Min</td></tr>
+                <tr><th>Silicon (Si)</th><td>0.10% Max</td></tr>
+                <tr><th>Iron (Fe)</th><td>0.20% Max</td></tr>
+                <tr><th>Copper (Cu)</th><td>0.03% Max</td></tr>
+                <tr><th>Zinc (Zn)</th><td>0.07% Max</td></tr>
+                <tr><th>Others (Total)</th><td>0.10% Max</td></tr>
+            </table>
+        </div>
 
-</div>
+        <!-- RIGHT COLUMN -->
+        <div class="box">
+            <h4>Technical Specifications</h4>
+            <table>
+                <tr><th>Grade</th><td>A7</td></tr>
+                <tr><th>Purity</th><td>99.7% Min</td></tr>
+                <tr><th>Ingot Weight</th><td>20–25 Kg</td></tr>
+                <tr><th>Standard</th><td>GB / ASTM / LME</td></tr>
+                <tr><th>Origin</th><td>As per contract</td></tr>
+                <tr><th>MOQ</th><td>5,000 MT</td></tr>
+                <tr><th>Delivery Terms</th><td>FOB / CIF / CFR</td></tr>
+            </table>
 
-<div class="box" data-aos="fade-up" style="margin-top:40px;">
+            <h4>Packaging & Logistics</h4>
+            <ul>
+                <li>Bundled aluminium ingots (export-grade)</li>
+                <li>Moisture-protected packing</li>
+                <li>Containerized or bulk shipment</li>
+                <li>Shipment from approved global ports</li>
+            </ul>
 
-    <h2>Packaging & Logistics</h2>
+            <h4>Inspection & Documentation</h4>
+            <ul>
+                <li>SGS / BV / Intertek inspection (optional)</li>
+                <li>Certificate of Analysis (COA)</li>
+                <li>Certificate of Origin (COO)</li>
+                <li>Commercial Invoice & Packing List</li>
+            </ul>
 
-    <ul>
-        <li>Ingot Weight: <strong>20–25 Kg per ingot</strong></li>
-        <li>Bundling: <strong>Strapped aluminium bundles</strong></li>
-        <li>Packaging Type: <strong>Export-grade, moisture protected</strong></li>
-        <li>Shipping Ports: <strong>Any major port as per contract</strong></li>
-    </ul>
-
-</div>
-
-<div class="box" data-aos="fade-up" style="margin-top:40px;">
-
-    <h2>Inspection & Compliance</h2>
-
-    <ul>
-        <li>Quality Inspection: <strong>SGS / BV / Intertek (optional)</strong></li>
-        <li>Certificate of Analysis (COA): <strong>Provided</strong></li>
-        <li>Certificate of Origin (COO): <strong>Provided</strong></li>
-        <li>Packing List & Commercial Invoice: <strong>Provided</strong></li>
-        <li>Compliance: <strong>LME / ASTM / GB Standards</strong></li>
-    </ul>
-
-</div>
-
-<div class="box" data-aos="fade-up" style="margin-top:40px;">
-
-    <h2>Trade Terms & Buyer Information</h2>
-
-    <ul>
-        <li>Minimum Order Quantity (MOQ): <strong>5,000 MT</strong></li>
-        <li>Monthly Supply Capacity: <strong>Up to 5,000 MT</strong></li>
-        <li>Delivery Terms: <strong>FOB / CIF / CFR</strong></li>
-        <li>Payment Terms: <strong>T/T, LC (subject to agreement)</strong></li>
-        <li>End Use: <strong>Industrial & manufacturing purposes only</strong></li>
-    </ul>
-
-</div>
-                <!-- LEFT COLUMN -->
-<div data-aos="fade-up">
-
-  <!-- 1️⃣ PRODUCT OVERVIEW -->
-  <div class="box">
-    <h2>Product Overview</h2>
-    <p>
-      Hanok Industrial Group supplies <strong>Aluminium Ingots A7</strong>
-      with minimum purity of <strong>99.7%</strong>, sourced from
-      internationally approved smelters.
-    </p>
-    <p>
-      Our aluminium ingots are suitable for extrusion, rolling,
-      casting, automotive, construction, and industrial manufacturing.
-    </p>
-
-    <h3 style="margin-top:25px;">Typical Applications</h3>
-    <ul>
-      <li>Aluminium extrusion & profiles</li>
-      <li>Automotive & aerospace components</li>
-      <li>Electrical & conductor manufacturing</li>
-      <li>General industrial castings</li>
-    </ul>
-  </div>
-
-  <!-- 2️⃣ CHEMICAL COMPOSITION -->
-  <div class="box" data-aos="fade-up" style="margin-top:40px;">
-    <h2>Chemical Composition (Typical)</h2>
-    <table>
-      <tr><th>Aluminium (Al)</th><td>99.7% Min</td></tr>
-      <tr><th>Silicon (Si)</th><td>0.10% Max</td></tr>
-      <tr><th>Iron (Fe)</th><td>0.20% Max</td></tr>
-      <tr><th>Copper (Cu)</th><td>0.03% Max</td></tr>
-      <tr><th>Zinc (Zn)</th><td>0.07% Max</td></tr>
-      <tr><th>Others (Total)</th><td>0.10% Max</td></tr>
-    </table>
-  </div>
-
-  <!-- 3️⃣ PACKAGING -->
-  <div class="box" data-aos="fade-up" style="margin-top:40px;">
-    <h2>Packaging & Logistics</h2>
-    <ul>
-      <li>Ingot Weight: <strong>20–25 Kg per ingot</strong></li>
-      <li>Bundling: <strong>Strapped aluminium bundles</strong></li>
-      <li>Packaging Type: <strong>Export-grade, moisture protected</strong></li>
-      <li>Shipping Ports: <strong>Any major port as per contract</strong></li>
-    </ul>
-  </div>
-
-  <!-- 4️⃣ INSPECTION -->
-  <div class="box" data-aos="fade-up" style="margin-top:40px;">
-    <h2>Inspection & Compliance</h2>
-    <ul>
-      <li>Quality Inspection: <strong>SGS / BV / Intertek (optional)</strong></li>
-      <li>Certificate of Analysis (COA): <strong>Provided</strong></li>
-      <li>Certificate of Origin (COO): <strong>Provided</strong></li>
-      <li>Compliance: <strong>LME / ASTM / GB Standards</strong></li>
-    </ul>
-  </div>
-
-  <!-- 5️⃣ TRADE TERMS -->
-  <div class="box" data-aos="fade-up" style="margin-top:40px;">
-    <h2>Trade Terms & Buyer Information</h2>
-    <ul>
-      <li>Minimum Order Quantity: <strong>5,000 MT</strong></li>
-      <li>Monthly Supply Capacity: <strong>Up to 5,000 MT</strong></li>
-      <li>Delivery Terms: <strong>FOB / CIF / CFR</strong></li>
-      <li>Payment Terms: <strong>T/T, LC (subject to agreement)</strong></li>
-      <li>End Use: <strong>Industrial & manufacturing only</strong></li>
-    </ul>
-  </div>
-
-<!-- 6 TECHNICAL SPECIFICATIONS -->
-<div class="box" data-aos="fade-up" style="margin-top:40px;">
-  <h2>Technical Specifications</h2>
-
-  <table>
-    <tr><th>Grade</th><td>A7</td></tr>
-    <tr><th>Purity</th><td>99.7% Min</td></tr>
-    <tr><th>Ingot Weight</th><td>20–25 Kg</td></tr>
-    <tr><th>Standard</th><td>GB / ASTM / LME</td></tr>
-    <tr><th>Origin</th><td>As per Contract</td></tr>
-    <tr><th>Packing</th><td>Strapped Aluminium Bundles</td></tr>
-    <tr><th>MOQ</th><td>5,000 MT</td></tr>
-    <tr><th>Delivery Terms</th><td>FOB / CIF / CFR</td></tr>
-  </table>
-
-  <a href="../index.html#contact" class="btn" style="margin-top:20px; display:inline-block;">
-    Send Buyer Inquiry
-  </a>
-</div>
-        
-    
+            <a href="/#contact" class="btn">Send Buyer Inquiry</a>
+        </div>
 
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    © <span id="year"></span> Hanok Industrial Group. All Rights Reserved.
+    © 2025 Hanok Industrial Group. All Rights Reserved.
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({duration:1000,once:true});
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
