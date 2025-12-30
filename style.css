@@ -742,3 +742,9 @@ footer {
     font-size:1.6rem;
   }
 }
+@media (max-width: 768px) {
+  .hero-realistic {
+    min-height: 70vh;      /* FORCE image height on mobile */
+    padding: 120px 20px;
+  }
+}
