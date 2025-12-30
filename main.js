@@ -1,123 +1,118 @@
-/**
- * HANOK INDUSTRIAL GROUP - CORE ENGINE
- * Version: 1.0.0
- * Handles: Scroll Effects, Product Interactions, and Form Processing
- */
+/* =========================================================
+   7. MOBILE HAMBURGER MENU ENGINE
+========================================================= */
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. INITIALIZE AOS (Animation on Scroll)
-    // This creates the professional "fade-in" as the user scrolls down.
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            mirror: false,
-            anchorPlacement: 'top-bottom',
-        });
-    }
-
-    // 2. STICKY NAVIGATION LOGIC
-    const navbar = document.querySelector('#navbar');
-    const heroSection = document.querySelector('#home');
-
-    window.addEventListener('scroll', () => {
-        // Change navbar background after leaving the hero section
-        if (window.scrollY > 100) {
-            navbar.classList.add('sticky');
-        } else {
-            navbar.classList.remove('sticky');
-        }
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('open');
     });
 
-    // 3. PRODUCT DETAIL TOGGLE (READ MORE)
-    // We use a robust function to handle multiple product cards without repeating code
-    window.showMore = function(id) {
-        const detailPane = document.getElementById(id);
-        const allPanes = document.querySelectorAll('.details-pane');
-        const clickedButton = event.currentTarget;
-
-        // Close other panes if they are open (Accordion style)
-        allPanes.forEach(pane => {
-            if (pane.id !== id) {
-                pane.style.display = 'none';
-            }
-        });
-
-        // Toggle the selected pane
-        if (detailPane.style.display === 'block') {
-            detailPane.style.display = 'none';
-            clickedButton.textContent = 'Read More +';
-        } else {
-            detailPane.style.display = 'block';
-            clickedButton.textContent = 'Show Less -';
-            
-            // Auto-scroll to the details for better UX on mobile
-            detailPane.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    };
-
-    // 4. FORM SUBMISSION HANDLER
-    const contactForm = document.querySelector('.contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Visual feedback for the user
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'PROCESSING INQUIRY...';
-            submitBtn.disabled = true;
-
-            // Collect Form Data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                // In a production environment, this points to your Node.js endpoint
-                // const response = await fetch('/api/contact', {
-                //     method: 'POST',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify(data)
-                // });
-
-                // FOR NOW: Simulating success for the UI
-                setTimeout(() => {
-                    alert(`Thank you, ${data.name || 'Trader'}. Your inquiry regarding ${data.product || 'our commodities'} has been sent to Hanok Industrial Group. We will contact you at ${data.email} shortly.`);
-                    contactForm.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 1500);
-
-            } catch (error) {
-                console.error('Submission Error:', error);
-                alert('Connection error. Please call +91 770 2310 750 directly.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
-
-    // 5. SMOOTH SCROLLING FOR NAV LINKS
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 70, // Offset for the sticky navbar
-                    behavior: 'smooth'
-                });
-            }
+    // Close menu when clicking a link (mobile UX)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('open');
         });
     });
+}
 
-    // 6. DYNAMIC COPYRIGHT YEAR
-    const footerYear = document.querySelector('footer p');
-    if (footerYear) {
-        const year = new Date().getFullYear();
-        footerYear.innerHTML = `&copy; ${year} Hanok Industrial Group. All Rights Reserved. | Global Trading Desk`;
+/* =========================================================
+   8. SMART NAVBAR HIDE / REVEAL (ENTERPRISE UX)
+========================================================= */
+let lastScrollY = window.scrollY;
+const navBar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    if (!navBar) return;
+
+    if (window.scrollY > lastScrollY && window.scrollY > 200) {
+        navBar.style.transform = 'translateY(-100%)';
+    } else {
+        navBar.style.transform = 'translateY(0)';
     }
+    lastScrollY = window.scrollY;
 });
 
+/* =========================================================
+   9. INTERSECTION OBSERVER (CUSTOM ANIMATION ENGINE)
+========================================================= */
+const animatedElements = document.querySelectorAll('.animate');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+animatedElements.forEach(el => observer.observe(el));
+
+/* =========================================================
+   10. PRODUCT CARD INTELLIGENCE (HOVER + FOCUS)
+========================================================= */
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.classList.add('active-card');
+    });
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('active-card');
+    });
+});
+
+/* =========================================================
+   11. INQUIRY FORM VALIDATION (BUSINESS RULES)
+========================================================= */
+function validateInquiry(data) {
+    if (!data.name || data.name.length < 2) {
+        return 'Please enter a valid name.';
+    }
+    if (!data.email || !data.email.includes('@')) {
+        return 'Please enter a valid corporate email.';
+    }
+    if (!data.product) {
+        return 'Please select a product.';
+    }
+    if (!data.message || data.message.length < 10) {
+        return 'Please enter inquiry details (quantity, port, target price).';
+    }
+    return null;
+}
+
+/* =========================================================
+   12. SCROLL PROGRESS INDICATOR (PRO LOOK)
+========================================================= */
+const progressBar = document.createElement('div');
+progressBar.style.position = 'fixed';
+progressBar.style.top = '0';
+progressBar.style.left = '0';
+progressBar.style.height = '3px';
+progressBar.style.background = '#D4AF37';
+progressBar.style.zIndex = '9999';
+progressBar.style.width = '0%';
+document.body.appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = `${progress}%`;
+});
+
+/* =========================================================
+   13. UTILITY HELPERS (FUTURE SCALE)
+========================================================= */
+const HanokUtils = {
+    formatMT: (value) => `${value} MT`,
+    scrollToTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    isMobile: () => window.innerWidth <= 768
+};
+
+// Example future usage:
+// HanokUtils.scrollToTop();
