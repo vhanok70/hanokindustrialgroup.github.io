@@ -523,3 +523,44 @@ footer {
     letter-spacing: 1px;
   }
 }
+/* Section blocks inside product pages */
+.content-section {
+    margin-bottom: 28px;
+}
+
+.content-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: var(--navy);
+    border-left: 4px solid var(--gold);
+    padding-left: 10px;
+}
+
+.content-section p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+.content-section ul {
+    margin-left: 18px;
+}
+
+.content-section ul li {
+    margin-bottom: 6px;
+    font-size: 0.92rem;
+}
+
+/* Right column lists */
+.side-section {
+    margin-bottom: 22px;
+}
+
+.side-section h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--navy);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
