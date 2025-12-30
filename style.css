@@ -669,3 +669,38 @@ footer {
 .content-block table{
   margin-top:10px;
 }
+.box-stack{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.content-block{
+  background:#ffffff;
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.content-block h3{
+  margin-bottom:12px;
+  font-size:1.1rem;
+  font-weight:800;
+  color:#0a192f;
+  border-left:4px solid #D4AF37;
+  padding-left:10px;
+}
+
+.content-block p{
+  font-size:0.95rem;
+  line-height:1.8;
+  color:#333;
+}
+
+.content-block ul{
+  padding-left:18px;
+}
+
+.content-block li{
+  margin-bottom:8px;
+}
