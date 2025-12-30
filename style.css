@@ -624,3 +624,48 @@ footer {
   border-radius:4px;
   font-weight:500;
 }
+/* STACK CONTAINER */
+.box-stack{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+/* INDIVIDUAL BLOCK */
+.content-block{
+  background:#ffffff;
+  padding:22px;
+  border-radius:8px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* HEADINGS */
+.content-block h3{
+  margin-bottom:12px;
+  font-size:1.1rem;
+  font-weight:800;
+  color:#0a192f;
+  border-left:4px solid var(--gold);
+  padding-left:10px;
+}
+
+/* TEXT */
+.content-block p{
+  font-size:0.95rem;
+  line-height:1.8;
+  color:#333;
+}
+
+/* LIST */
+.content-block ul{
+  padding-left:18px;
+}
+
+.content-block li{
+  margin-bottom:8px;
+}
+
+/* TABLE */
+.content-block table{
+  margin-top:10px;
+}
