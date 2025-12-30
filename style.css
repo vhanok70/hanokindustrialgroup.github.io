@@ -506,3 +506,20 @@ footer {
     display: block;
   }
 }
+/* ===== MOBILE HERO CLEAN FIX ===== */
+@media (max-width: 768px) {
+  .hero-realistic {
+    min-height: 70vh;   /* NOT full screen */
+    padding: 90px 20px 40px;
+  }
+
+  .hero-realistic h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-realistic p {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+}
