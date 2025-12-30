@@ -472,3 +472,37 @@ footer {
     padding-top: 110px; /* space for fixed navbar */
   }
 }
+/* FIX NAV ALIGNMENT */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #0a192f;
+    flex-direction: column;
+    width: 220px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
