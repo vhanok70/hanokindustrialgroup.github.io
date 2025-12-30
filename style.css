@@ -92,20 +92,18 @@ nav.sticky {
 
 /* ================= HERO ================= */
 .hero-realistic {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;                    /* ✅ FIX overflow */
+  min-height: calc(100vh - 80px); /* ✅ FIX desktop gap */
+  padding: 80px 20px 40px;        /* ✅ space for fixed navbar */
+
   background:
     linear-gradient(rgba(10,25,47,0.65), rgba(10,25,47,0.65)),
-    url("ship-hero.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    url("ship-hero.png") center / cover no-repeat;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
 }
 
 .hero-realistic h1 {
@@ -433,5 +431,12 @@ footer {
 
   .nav-links li {
     margin: 18px 0;
+  }
+}
+/* ===== MOBILE HERO FIX ===== */
+@media (max-width: 768px) {
+  .hero-realistic {
+    min-height: 100vh;
+    padding-top: 90px;
   }
 }
