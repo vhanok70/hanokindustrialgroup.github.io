@@ -172,6 +172,35 @@
 <!-- ================= SCRIPTS ================= -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="main.js"></script>
+  <script>
+  // AOS Animation
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  // Sticky Navbar
+  window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 100) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
+
+  // Mobile Menu Toggle (FIXED)
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+  }
+
+  // Read More Toggle
+  function toggleDetails(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "block" ? "none" : "block";
+  }
+  </script>
 
 </body>
         </html>
