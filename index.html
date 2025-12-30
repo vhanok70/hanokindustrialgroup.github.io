@@ -3,200 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanok Industrial Group | Mobile & Desktop Global Metals</title>
+    <title>Hanok Industrial Group | Global Metal Trading</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root { 
-            --gold: #D4AF37; 
-            --dark-navy: #0a192f; 
-            --white: #ffffff; 
-        }
-
-        /* Basic Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: #f4f4f4; 
-            color: var(--dark-navy); 
-            line-height: 1.6;
-        }
-
-        /* NAVIGATION - Dynamic for Mobile */
-        nav { 
-            position: fixed; 
-            top: 0; 
-            width: 100%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 15px 5%; 
-            z-index: 2000; 
-            background: rgba(10, 25, 47, 0.95); 
-            border-bottom: 2px solid var(--gold); 
-        }
-        .logo { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--white); text-transform: uppercase; }
-        .logo span { color: var(--gold); }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.75rem; text-transform: uppercase; margin-left: 15px; font-weight: bold; }
-
-        /* HERO SECTION - Responsive Background */
-        .hero {
-            height: 100vh; 
-            width: 100%;
-            background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), 
-                        url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070'); 
-            background-size: cover; 
-            background-position: center; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            color: var(--white);
-            padding: 0 20px;
-        }
-        .hero-content h1 { 
-            font-family: 'Oswald', sans-serif; 
-            font-size: clamp(2.5rem, 10vw, 4.5rem); 
-            text-transform: uppercase; 
-            line-height: 1.1;
-        }
-        .hero-content p { 
-            font-size: 1rem; 
-            color: var(--gold); 
-            font-weight: bold; 
-            margin: 20px 0; 
-            letter-spacing: 2px;
-        }
-
-        /* COMMODITIES GRID - Flexes for Mobile */
-        .products { padding: 60px 5%; text-align: center; }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
-            margin-top: 30px; 
-        }
-        .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 20px; text-align: left; }
-        .details-pane { display: none; margin-top: 10px; background: #f9f9f9; padding: 15px; border-radius: 5px; font-size: 0.85rem; border-left: 3px solid var(--gold); }
-
-        .btn-gold { 
-            background: var(--gold); 
-            color: var(--dark-navy); 
-            padding: 12px 24px; 
-            border: none; 
-            font-weight: bold; 
-            cursor: pointer; 
-            text-transform: uppercase; 
-            border-radius: 4px; 
-            width: 100%; /* Better for mobile touch */
-            margin-top: 10px;
-        }
-
-        /* CONTACT SECTION - Responsive Stack */
-        .contact { background: var(--dark-navy); color: #fff; padding: 60px 5%; }
-        .contact-container { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 40px; 
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
-        .contact-form input, .contact-form textarea { 
-            width: 100%; 
-            padding: 15px; 
-            margin-bottom: 15px; 
-            border-radius: 4px; 
-            border: none; 
-            font-size: 1rem;
-        }
-
-        /* MOBILE SPECIFIC OVERRIDES */
-        @media (max-width: 768px) {
-            nav { padding: 15px 3%; }
-            .nav-links { display: none; } /* Hide text links for clean mobile look */
-            .hero-content h1 { font-size: 2.8rem; }
-            .hero { background-attachment: scroll; } /* Better performance on mobile */
-            .grid { grid-template-columns: 1fr; } /* Force single column on phones */
-            .card img { height: 180px; }
-        }
-
-        footer { text-align: center; padding: 20px; background: #050c16; color: #8892b0; font-size: 0.75rem; }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
+    <nav id="navbar">
         <div class="logo">HANOK <span>INDUSTRIAL</span></div>
-        <div class="nav-links">
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Commodities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Global Metals</h1>
-            <p>ALUMINUM A7 | COPPER | SCRAP</p>
-            <button class="btn-gold" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">View Inventory</button>
+            <h1>Global Metals & Minerals</h1>
+            <p>ALUMINUM A7 | COPPER CATHODE | INDUSTRIAL SCRAP</p>
+            <button class="btn-cta" id="exploreBtn">Explore Inventory</button>
         </div>
     </section>
 
     <section class="products" id="products">
-        <h2 style="font-family: 'Oswald'; font-size: 2.2rem; text-transform: uppercase;">Our Commodities</h2>
+        <h2 class="section-title">Our Commodities</h2>
         <div class="grid">
+            
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=1000" alt="Aluminum">
+                <img src="https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=1000" alt="Aluminum A7">
                 <div class="card-body">
                     <h3>Aluminum Ingots A7</h3>
-                    <p>99.7% Purity. Global Delivery.</p>
-                    <div id="alu" class="details-pane">Weight: 22.5kg. Purity: 99.7% min. LME Grade.</div>
-                    <button class="btn-gold" onclick="toggle('alu')">Product Details</button>
+                    <p>99.7% Purity. LME Standards.</p>
+                    <div id="alu-details" class="details-pane">
+                        <p>High-grade Aluminum for industrial use. 22.5kg per ingot.</p>
+                    </div>
+                    <button class="read-more-btn" data-target="alu-details">Read More +</button>
                 </div>
             </div>
+
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1563290632-68a8397a6f23?q=80&w=1000" alt="Copper">
+                <img src="https://images.unsplash.com/photo-1563290632-68a8397a6f23?q=80&w=1000" alt="Copper Cathode">
                 <div class="card-body">
                     <h3>Copper Cathode</h3>
-                    <p>Grade A 99.99% Purity.</p>
-                    <div id="cop" class="details-pane">ASTM B115-00. Electrolytic high purity copper.</div>
-                    <button class="btn-gold" onclick="toggle('cop')">Product Details</button>
+                    <p>Grade A 99.99% purity. High-conductivity.</p>
+                    <div id="copper-details" class="details-pane">
+                        <p>LME Registered Brands. ASTM B115-00 standard.</p>
+                    </div>
+                    <button class="read-more-btn" data-target="copper-details">Read More +</button>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <footer id="contact">
         <div class="contact-container">
-            <div style="text-align: center;">
-                <h2 style="color:var(--gold); font-family: 'Oswald';">DIRECT TRADE DESK</h2>
-                <p style="margin-top:10px;">Phone: +91 770 2310 750</p>
-                <p>Email: hanokglobaltrader@gmail.com</p>
-            </div>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Inquiry Sent!');">
+            <h2>Contact Us</h2>
+            <p>Phone: +91 770 2310 750</p>
+            <p>Email: hanokglobaltrader@gmail.com</p>
+            <form class="contact-form">
                 <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Corporate Email" required>
-                <textarea rows="4" placeholder="Order Quantity (MT)"></textarea>
-                <button type="submit" class="btn-gold">Submit LOI</button>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
             </form>
         </div>
-    </section>
-
-    <footer>
-        &copy; 2025 Hanok Industrial Group. Designed for Mobile & Desktop.
     </footer>
 
-    <script>
-        function toggle(id) {
-            var x = document.getElementById(id);
-            x.style.display = (x.style.display === "block") ? "none" : "block";
-            event.target.innerText = (x.style.display === "block") ? "Close Details" : "Product Details";
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
 
