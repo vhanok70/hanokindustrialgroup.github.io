@@ -1,155 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Copper Cathode Grade A | Hanok Industrial Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Copper Cathode Grade A 99.99% purity supplied by Hanok Industrial Group. LME Grade A electrolytic copper cathodes for global export.">
+    <meta charset="UTF-8">
+    <title>Copper Cathode | Hanok Industrial Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grade A Copper Cathode (99.99% purity) supplied globally by Hanok Industrial Group. LME Grade A, CIF / FOB export, bulk supply available.">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root{
+            --gold:#D4AF37;
+            --navy:#0a192f;
+            --light:#f4f7f6;
+            --white:#ffffff;
+        }
+
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Montserrat',sans-serif;
+            background:var(--light);
+            color:#111;
+            line-height:1.7;
+        }
+
+        /* NAV */
+        header{
+            background:var(--navy);
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        header a{
+            color:var(--white);
+            text-decoration:none;
+            font-size:0.9rem;
+            margin-left:25px;
+        }
+        .logo{
+            font-family:'Oswald',sans-serif;
+            font-size:1.6rem;
+            color:var(--white);
+            letter-spacing:2px;
+        }
+        .logo span{color:var(--gold)}
+
+        /* HERO */
+        .hero{
+            padding:120px 8% 80px;
+            background:linear-gradient(rgba(10,25,47,.85),rgba(10,25,47,.85)),
+            url("https://images.unsplash.com/photo-1616627981431-5c66c9c9c14b?q=80&w=2070");
+            background-size:cover;
+            background-position:center;
+            color:var(--white);
+        }
+        .hero h1{
+            font-family:'Oswald',sans-serif;
+            font-size:clamp(2.2rem,5vw,4rem);
+            margin-bottom:15px;
+        }
+        .hero p{
+            color:var(--gold);
+            font-weight:600;
+            letter-spacing:2px;
+        }
+
+        /* CONTENT */
+        .container{
+            max-width:1200px;
+            margin:auto;
+            padding:60px 20px;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:1.2fr .8fr;
+            gap:50px;
+        }
+
+        @media(max-width:900px){
+            .grid{grid-template-columns:1fr}
+        }
+
+        /* SPEC TABLE */
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:#fff;
+        }
+        table th,table td{
+            padding:14px;
+            border:1px solid #ddd;
+            text-align:left;
+        }
+        table th{
+            background:#f1f1f1;
+            width:35%;
+        }
+
+        /* BOX */
+        .box{
+            background:#fff;
+            padding:35px;
+            border-radius:6px;
+            box-shadow:0 10px 25px rgba(0,0,0,.05);
+        }
+
+        /* BUTTON */
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:14px 28px;
+            background:var(--gold);
+            color:#000;
+            text-decoration:none;
+            font-weight:700;
+            border-radius:4px;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#050c16;
+            color:#aaa;
+            text-align:center;
+            padding:25px;
+            font-size:.85rem;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<nav id="navbar">
-  <div class="logo">HANOK <span>INDUSTRIAL</span></div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#products">Commodities</a></li>
-    <li><a href="../index.html#contact">Contact</a></li>
-  </ul>
-  <div class="menu-btn" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
-</nav>
+<header>
+    <div class="logo">HANOK <span>INDUSTRIAL</span></div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/#products">Commodities</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+</header>
 
-<!-- ================= HERO ================= -->
-<section class="hero-product">
-  <h1>Copper Cathode</h1>
-  <p>Grade A • Electrolytic • 99.99% Purity</p>
+<section class="hero">
+    <h1>Copper Cathode</h1>
+    <p>GRADE A · ELECTROLYTIC · 99.99% PURITY</p>
 </section>
 
-<!-- ================= CONTENT ================= -->
-<section class="product-page">
-  <div class="product-grid">
+<section class="container">
+    <div class="grid">
 
-    <!-- LEFT COLUMN -->
-    <div class="product-left">
+        <!-- LEFT -->
+        <div class="box" data-aos="fade-up">
+            <h2>Product Overview</h2>
+            <p>
+                Hanok Industrial Group supplies high-purity <strong>Grade A Copper Cathodes</strong>
+                sourced from internationally approved smelters. Our copper cathodes comply with
+                global quality standards and are suitable for electrical, industrial, and
+                manufacturing applications.
+            </p>
 
-      <div class="info-card">
-        <h2>Product Overview</h2>
-        <p>
-          Hanok Industrial Group supplies high-purity <strong>Grade A Copper Cathodes</strong>
-          sourced from internationally approved smelters. Our copper cathodes comply
-          with <strong>LME Grade A</strong> standards and are widely used in electrical,
-          industrial, and manufacturing applications.
-        </p>
+            <h3>Typical Applications</h3>
+            <ul>
+                <li>Electrical & conductor manufacturing</li>
+                <li>Wire & cable production</li>
+                <li>Industrial components</li>
+                <li>Alloy & metal processing</li>
+            </ul>
 
-        <h3>Typical Applications</h3>
-        <ul>
-          <li>Electrical & conductor manufacturing</li>
-          <li>Wire & cable production</li>
-          <li>Industrial components</li>
-          <li>Alloy & metal processing</li>
-        </ul>
-      </div>
+            <h3>Chemical Composition (Typical)</h3>
+            <table>
+                <tr><th>Copper (Cu)</th><td>99.99% Min</td></tr>
+                <tr><th>Oxygen (O)</th><td>0.04% Max</td></tr>
+                <tr><th>Other Elements</th><td>0.01% Max</td></tr>
+            </table>
+        </div>
 
-      <div class="info-card">
-        <h2>Chemical Composition (Typical)</h2>
-        <table class="spec-table">
-          <tr>
-            <th>Copper (Cu)</th>
-            <td>99.99% Min</td>
-          </tr>
-          <tr>
-            <th>Oxygen (O)</th>
-            <td>0.04% Max</td>
-          </tr>
-          <tr>
-            <th>Other Elements</th>
-            <td>0.01% Max</td>
-          </tr>
-        </table>
-      </div>
+        <!-- RIGHT -->
+        <div class="box" data-aos="fade-left">
+            <h3>Packaging & Logistics</h3>
+            <ul>
+                <li>Form: Electrolytic Copper Cathode</li>
+                <li>Bundling: Strapped / Palletized</li>
+                <li>Packaging: Export-grade</li>
+                <li>Shipping Ports: Any major port as per contract</li>
+            </ul>
 
-      <div class="info-card">
-        <h2>Packaging & Logistics</h2>
-        <ul>
-          <li><strong>Form:</strong> Electrolytic Copper Cathode</li>
-          <li><strong>Bundling:</strong> Strapped / Palletized</li>
-          <li><strong>Packaging Type:</strong> Export-grade</li>
-          <li><strong>Shipping Ports:</strong> Any major port as per contract</li>
-        </ul>
-      </div>
+            <h3>Inspection & Compliance</h3>
+            <ul>
+                <li>Quality Inspection: SGS / BV / Intertek (optional)</li>
+                <li>Certificate of Analysis (COA): Provided</li>
+                <li>Certificate of Origin (COO): Provided</li>
+                <li>Compliance: LME Grade A</li>
+            </ul>
 
-      <div class="info-card">
-        <h2>Inspection & Compliance</h2>
-        <ul>
-          <li>Quality Inspection: SGS / BV / Intertek (optional)</li>
-          <li>Certificate of Analysis (COA): Provided</li>
-          <li>Certificate of Origin (COO): Provided</li>
-          <li>Compliance: LME Grade A</li>
-        </ul>
-      </div>
+            <h3>Technical Specifications</h3>
+            <table>
+                <tr><th>Grade</th><td>LME Grade A</td></tr>
+                <tr><th>Purity</th><td>99.99% Min</td></tr>
+                <tr><th>Form</th><td>Electrolytic Cathode</td></tr>
+                <tr><th>Standard</th><td>LME / ASTM</td></tr>
+                <tr><th>Origin</th><td>As per contract</td></tr>
+                <tr><th>MOQ</th><td>1500 MT</td></tr>
+                <tr><th>Delivery Terms</th><td>FOB / CIF / CFR</td></tr>
+            </table>
+
+            <a href="/#contact" class="btn">Send Buyer Inquiry</a>
+        </div>
 
     </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="product-right">
-
-      <div class="info-card">
-        <h2>Technical Specifications</h2>
-        <table class="spec-table">
-          <tr>
-            <th>Grade</th>
-            <td>LME Grade A</td>
-          </tr>
-          <tr>
-            <th>Purity</th>
-            <td>99.99% Min</td>
-          </tr>
-          <tr>
-            <th>Form</th>
-            <td>Electrolytic Cathode</td>
-          </tr>
-          <tr>
-            <th>Standard</th>
-            <td>LME / ASTM</td>
-          </tr>
-          <tr>
-            <th>Origin</th>
-            <td>As per Contract</td>
-          </tr>
-          <tr>
-            <th>MOQ</th>
-            <td>1500 MT</td>
-          </tr>
-          <tr>
-            <th>Delivery Terms</th>
-            <td>FOB / CIF / CFR</td>
-          </tr>
-        </table>
-
-        <a href="../index.html#contact" class="btn btn-gold">
-          Send Buyer Inquiry
-        </a>
-      </div>
-
-    </div>
-  </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  © 2025 Hanok Industrial Group. All Rights Reserved.
+    © 2025 Hanok Industrial Group. All Rights Reserved.
 </footer>
 
-<script src="../main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 </html>
