@@ -289,3 +289,52 @@ html, body{
   width:100%;
   overflow-x:hidden;
 }
+/* ================= FINAL MOBILE HARD FIX ================= */
+
+/* Kill horizontal scroll forever */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Never allow images to overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix hero overflow on mobile */
+@media (max-width: 768px) {
+  .hero-realistic {
+    width: 100%;
+    min-height: 65vh;
+    padding: 110px 16px 40px;
+  }
+}
+
+/* Products section fix */
+.products {
+  width: 100%;
+  padding: 70px 20px;
+}
+
+/* Force single column cards on mobile */
+.products .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+/* Product card image fix */
+.products img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CTA full width fix */
+.cta-section {
+  width: 100%;
+  padding: 70px 20px;
+}
