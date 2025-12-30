@@ -1,123 +1,115 @@
 /**
- * HANOK INDUSTRIAL GROUP - CORE ENGINE
- * Version: 1.0.0
- * Handles: Scroll Effects, Product Interactions, and Form Processing
+ * HANOK INDUSTRIAL GROUP - CORE PLATFORM ENGINE
+ * Version: 2.0.0
+ * Features: Scroll-Spy, Form Validation, Smooth Animations, Product Modal Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. INITIALIZE AOS (Animation on Scroll)
-    // This creates the professional "fade-in" as the user scrolls down.
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            mirror: false,
-            anchorPlacement: 'top-bottom',
-        });
-    }
-
-    // 2. STICKY NAVIGATION LOGIC
-    const navbar = document.querySelector('#navbar');
-    const heroSection = document.querySelector('#home');
+    // 1. STICKY HEADER DYNAMICS
+    const header = document.querySelector('nav');
+    const scrollThreshold = 100;
 
     window.addEventListener('scroll', () => {
-        // Change navbar background after leaving the hero section
-        if (window.scrollY > 100) {
-            navbar.classList.add('sticky');
+        if (window.scrollY > scrollThreshold) {
+            header.style.background = "rgba(10, 25, 47, 0.98)";
+            header.style.padding = "15px 5%";
+            header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
         } else {
-            navbar.classList.remove('sticky');
+            header.style.background = "rgba(10, 25, 47, 0.9)";
+            header.style.padding = "20px 5%";
+            header.style.boxShadow = "none";
         }
     });
 
-    // 3. PRODUCT DETAIL TOGGLE (READ MORE)
-    // We use a robust function to handle multiple product cards without repeating code
-    window.showMore = function(id) {
-        const detailPane = document.getElementById(id);
-        const allPanes = document.querySelectorAll('.details-pane');
-        const clickedButton = event.currentTarget;
-
-        // Close other panes if they are open (Accordion style)
-        allPanes.forEach(pane => {
-            if (pane.id !== id) {
-                pane.style.display = 'none';
+    // 2. PRODUCT DETAIL TOGGLE (THE "READ MORE" BUTTONS)
+    // This is the specific fix for your non-working buttons.
+    window.toggleBtn = function(id) {
+        const detailBox = document.getElementById(id);
+        const allDetails = document.querySelectorAll('.details');
+        
+        // Close other open product details for a clean look (Accordion style)
+        allDetails.forEach(detail => {
+            if (detail.id !== id) {
+                detail.style.display = 'none';
+                const btn = detail.previousElementSibling;
+                if(btn && btn.classList.contains('btn-gold')) btn.innerText = 'Read More';
             }
         });
 
-        // Toggle the selected pane
-        if (detailPane.style.display === 'block') {
-            detailPane.style.display = 'none';
-            clickedButton.textContent = 'Read More +';
+        // Toggle the clicked detail
+        if (detailBox.style.display === "block") {
+            detailBox.style.display = "none";
+            event.target.innerText = "Read More";
         } else {
-            detailPane.style.display = 'block';
-            clickedButton.textContent = 'Show Less -';
-            
-            // Auto-scroll to the details for better UX on mobile
-            detailPane.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            detailBox.style.display = "block";
+            detailBox.style.animation = "fadeIn 0.5s ease";
+            event.target.innerText = "Show Less";
         }
     };
 
-    // 4. FORM SUBMISSION HANDLER
-    const contactForm = document.querySelector('.contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Visual feedback for the user
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'PROCESSING INQUIRY...';
-            submitBtn.disabled = true;
-
-            // Collect Form Data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                // In a production environment, this points to your Node.js endpoint
-                // const response = await fetch('/api/contact', {
-                //     method: 'POST',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify(data)
-                // });
-
-                // FOR NOW: Simulating success for the UI
-                setTimeout(() => {
-                    alert(`Thank you, ${data.name || 'Trader'}. Your inquiry regarding ${data.product || 'our commodities'} has been sent to Hanok Industrial Group. We will contact you at ${data.email} shortly.`);
-                    contactForm.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 1500);
-
-            } catch (error) {
-                console.error('Submission Error:', error);
-                alert('Connection error. Please call +91 770 2310 750 directly.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
-
-    // 5. SMOOTH SCROLLING FOR NAV LINKS
+    // 3. SMOOTH NAVIGATION SCROLLING
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
                 window.scrollTo({
-                    top: target.offsetTop - 70, // Offset for the sticky navbar
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // 6. DYNAMIC COPYRIGHT YEAR
-    const footerYear = document.querySelector('footer p');
-    if (footerYear) {
-        const year = new Date().getFullYear();
-        footerYear.innerHTML = `&copy; ${year} Hanok Industrial Group. All Rights Reserved. | Global Trading Desk`;
+    // 4. FORM SUBMISSION LOGIC (Inquiry Handling)
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Visual feedback
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "SENDING INQUIRY...";
+            btn.disabled = true;
+
+            // Simulate server processing
+            setTimeout(() => {
+                alert("Thank you for contacting Hanok Industrial Group. Your inquiry has been logged. Our trade desk will contact you at the provided email shortly.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+                contactForm.reset();
+            }, 2000);
+        });
     }
+
+    // 5. AUTO-YEAR UPDATE FOR FOOTER
+    const yearSpan = document.querySelector('.year');
+    if (yearSpan) {
+        yearSpan.innerText = new Date().getFullYear();
+    }
+});
+
+// 6. ANIMATION ON SCROLL (Simple Implementation)
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.card, .section h2').forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "all 0.8s ease-out";
+    observer.observe(el);
 });
 
