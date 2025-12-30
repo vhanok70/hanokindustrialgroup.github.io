@@ -1,23 +1,24 @@
 /* HANOK INDUSTRIAL GROUP - MASTER STYLESHEET 
-    Theme: Global Industrial / Corporate Gold & Navy
+    Theme: Professional Global Industrial
+    Color Palette: Navy #0a192f, Gold #D4AF37, Slate #8892b0
 */
 
 :root {
-    --primary-gold: #D4AF37;
-    --deep-navy: #0a192f;
+    --gold: #D4AF37;
+    --gold-hover: #f1c40f;
+    --dark-navy: #0a192f;
     --navy-light: #112240;
     --slate: #8892b0;
     --white: #ffffff;
-    --glass: rgba(255, 255, 255, 0.05);
-    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --bg-light: #f9f9f9;
+    --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* 1. Reset & Base */
+/* 1. Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', 'Segoe UI', sans-serif;
 }
 
 html {
@@ -25,42 +26,44 @@ html {
 }
 
 body {
-    background-color: #f8f9fa;
-    color: var(--deep-navy);
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--dark-navy);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* 2. Navigation Styling */
+/* 2. Professional Navigation */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 8%;
     z-index: 2000;
     transition: var(--transition);
-    background: transparent;
-}
-
-nav.sticky {
-    background: rgba(10, 25, 47, 0.98);
-    padding: 15px 8%;
-    border-bottom: 2px solid var(--primary-gold);
+    background: rgba(10, 25, 47, 0.2);
     backdrop-filter: blur(10px);
 }
 
+nav.sticky {
+    background: var(--dark-navy);
+    padding: 15px 8%;
+    border-bottom: 2px solid var(--gold);
+}
+
 .logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
     color: var(--white);
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .logo span {
-    color: var(--primary-gold);
+    color: var(--gold);
 }
 
 .nav-links {
@@ -75,24 +78,23 @@ nav.sticky {
 .nav-links a {
     text-decoration: none;
     color: var(--white);
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 0.9rem;
     transition: var(--transition);
+    text-transform: uppercase;
 }
 
 .nav-links a:hover {
-    color: var(--primary-gold);
+    color: var(--gold);
 }
 
-/* 3. Hero Section (Container Ship) */
+/* 3. Massive Hero Section */
 .hero {
     height: 100vh;
     width: 100%;
-    /* Container Ship Image */
-    background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
-                url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070');
+    /* Container Ship Background */
+    background: linear-gradient(rgba(10, 25, 47, 0.65), rgba(10, 25, 47, 0.65)), 
+                url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -104,141 +106,187 @@ nav.sticky {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    letter-spacing: 5px;
     text-transform: uppercase;
-    letter-spacing: 4px;
     margin-bottom: 15px;
+    animation: fadeInUp 1s ease;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    color: var(--primary-gold);
-    font-weight: 700;
-    letter-spacing: 3px;
     margin-bottom: 30px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-weight: bold;
 }
 
-/* 4. Product Cards Grid */
-.section-title {
+/* 4. Industrial Product Cards */
+.products {
+    padding: 120px 8%;
+    background: #f0f2f5;
     text-align: center;
-    font-size: 2.5rem;
-    margin: 80px 0 40px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    color: var(--deep-navy);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    padding: 0 10% 100px;
 }
 
 .card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     transition: var(--transition);
-    border-bottom: 4px solid transparent;
+    position: relative;
+    border-bottom: 5px solid transparent;
 }
 
 .card:hover {
     transform: translateY(-15px);
-    border-bottom: 4px solid var(--primary-gold);
+    border-bottom: 5px solid var(--gold);
 }
 
 .card img {
     width: 100%;
-    height: 240px;
+    height: 250px;
     object-fit: cover;
     transition: var(--transition);
 }
 
 .card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-.card-content {
-    padding: 30px;
+.card-body {
+    padding: 35px;
+    text-align: left;
 }
 
-.card-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--deep-navy);
+.card-body h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--dark-navy);
 }
 
-.details {
-    display: none; /* Controlled by main.js */
-    background: #f1f3f5;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 8px;
+/* 5. Interactive Details Pane */
+.details-pane {
+    display: none;
+    margin-top: 20px;
     font-size: 0.9rem;
-    border-left: 3px solid var(--primary-gold);
-    animation: slideDown 0.4s ease;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--gold);
+    animation: slideIn 0.5s ease;
 }
 
-/* 5. Buttons */
-.btn-gold {
-    background: var(--primary-gold);
-    color: var(--deep-navy);
-    border: none;
+.read-more-btn {
+    margin-top: 25px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
     padding: 12px 25px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 4px;
     transition: var(--transition);
+    text-transform: uppercase;
 }
 
-.btn-gold:hover {
-    background: var(--deep-navy);
+.read-more-btn:hover {
+    background: var(--gold);
     color: var(--white);
-    transform: translateY(-2px);
 }
 
-/* 6. Contact Form Section */
-.contact-sec {
-    background: var(--deep-navy);
+/* 6. Professional Contact Form */
+.contact {
+    padding: 120px 8%;
+    background: var(--dark-navy);
     color: var(--white);
-    padding: 100px 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
 }
 
 .contact-form {
-    display: grid;
-    gap: 20px;
-    margin-top: 40px;
+    background: rgba(255,255,255,0.03);
+    padding: 50px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.contact-form input, 
-.contact-form select, 
-.contact-form textarea {
+.form-group input, .form-group select, .form-group textarea {
     width: 100%;
     padding: 18px;
-    background: var(--navy-light);
-    border: 1px solid #233554;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
     color: var(--white);
     border-radius: 5px;
-    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: var(--transition);
 }
 
-.contact-form input:focus {
-    border-color: var(--primary-gold);
-    outline: none;
+.form-group input:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.08);
 }
 
-/* 7. Animations */
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--gold);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background: var(--white);
+    color: var(--dark-navy);
+}
+
+/* 7. Keyframe Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
 /* 8. Mobile Responsiveness */
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .contact-sec { padding: 80px 5%; }
+@media (max-width: 968px) {
+    .contact {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
 }
 
