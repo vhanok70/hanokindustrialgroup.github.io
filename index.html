@@ -2,69 +2,323 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hanok Industrial Group | Industrial Metal Trading</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanok Industrial Group | Aluminium Ingots A7 & Copper Cathode</title>
+  <meta name="description" content="Hanok Industrial Group trades high‑purity Aluminium Ingots A7, Copper Cathodes and Non‑Ferrous Scrap for global buyers." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navigation -->
+  <header class="header">
+    <div class="logo">Hanok <span>Industrial Group</span></div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </header>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">Hanok Industrial Group</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#contact">Inquiry</a></li>
-  </ul>
-</nav>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Global Supply of Aluminium A7, Copper Cathodes & Scrap</h1>
+      <p>
+        Hanok Industrial Group connects verified smelters and yards with serious international buyers, 
+        focusing on high‑purity Aluminium Ingots A7 (99.7%), LME‑grade Copper Cathodes and quality scrap. 
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">View Products</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
 
-<!-- HERO -->
-<header class="hero fade-in">
-  <h1>Bridging India with Global Markets</h1>
-  <p class="tagline">Independent Merchant Trader & Supplier of Industrial Metals</p>
-  <p class="products-line">Aluminium Ingots • Copper Cathode • Metal Scrap</p>
-  <a href="#contact" class="btn">Send Inquiry</a>
-</header>
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="section-title">
+      <h2>Hanok Industrial Group</h2>
+      <p>Your trading partner for non‑ferrous metals and scrap.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hanok Industrial Group is a metal trading mandate headquartered in Haryana, India, 
+          connecting global buyers with reliable producers of Aluminium Ingots A7, Copper Cathodes and non‑ferrous scrap. 
+        </p>
+        <p>
+          The group focuses on consistent quality, transparent documentation and efficient logistics for containerized shipments 
+          from trusted smelters and yards. 
+        </p>
+        <button class="btn-link" data-modal-target="#aboutModal">Read more</button>
+      </div>
+      <div class="about-cards">
+        <div class="info-card">
+          <h3>Global Reach</h3>
+          <p>Serving buyers across Asia, Middle East, Europe and Africa through an established smelter network.</p>
+        </div>
+        <div class="info-card">
+          <h3>Product Focus</h3>
+          <p>Primary Aluminium Ingots A7 (99.7%), Copper Cathodes and non‑ferrous scrap grades.</p>
+        </div>
+        <div class="info-card">
+          <h3>Documentation</h3>
+          <p>Support with contracts, inspection, SGS and logistics coordination for smooth shipments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section class="section reveal" id="about">
-  <h2>About Us</h2>
-  <p>
-    Hanok Industrial Group is an independent industrial trading company based in
-    Kurnool, Andhra Pradesh, India. We specialize in sourcing and supplying
-    aluminium ingots, copper cathode, and metal scrap to domestic and international buyers.
-  </p>
-  <p>
-    Our operations focus on transparency, compliance, and long-term trade relationships.
-  </p>
-</section>
+  <!-- Products -->
+  <section id="products" class="section products">
+    <div class="section-title">
+      <h2>Core Products</h2>
+      <p>Focused portfolio for serious industrial buyers.</p>
+    </div>
+    <div class="products-grid">
 
-<!-- PRODUCTS -->
-<section class="section reveal" id="products">
-  <h2>Our Products</h2>
-  <div class="product-list">
-    <a href="aluminium.html" class="product hover">Aluminium Ingots</a>
-    <a href="copper.html" class="product hover">Copper Cathode</a>
-    <a href="scrap.html" class="product hover">Metal Scrap</a>
+      <!-- Aluminium Ingots A7 -->
+      <article class="product-card">
+        <div class="product-image" style="background-image:url('/images/aluminium-ingots-a7.jpg');"></div>
+        <div class="product-body">
+          <h3>Aluminium Ingots A7 (99.7%)</h3>
+          <p>
+            High‑purity primary aluminium ingots with minimum 99.7% Al content, ideal for casting and extrusion applications in automotive, construction and electrical industries. [web:1][web:4]
+          </p>
+          <ul class="product-tags">
+            <li>Purity 99.7% min</li>
+            <li>Primary aluminium</li>
+            <li>Bundle: 1–1.2 MT</li>
+          </ul>
+          <div class="product-actions">
+            <button class="btn-outline" data-modal-target="#aluminiumModal">Read more</button>
+            <button class="btn-primary" data-product="Aluminium Ingots A7" data-contact-open>Request Quote</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Copper Cathode -->
+      <article class="product-card">
+        <div class="product-image" style="background-image:url('/images/copper-cathode.jpg');"></div>
+        <div class="product-body">
+          <h3>Copper Cathodes (LME Grade A)</h3>
+          <p>
+            High‑purity copper cathodes (up to 99.99% Cu) produced through electrolytic refining, used as base material for wire, cables, tubes and other copper products. [web:6][web:12]
+          </p>
+          <ul class="product-tags">
+            <li>Purity 99.97–99.99%</li>
+            <li>LME Grade A</li>
+            <li>Standard sheets</li>
+          </ul>
+          <div class="product-actions">
+            <button class="btn-outline" data-modal-target="#copperModal">Read more</button>
+            <button class="btn-primary" data-product="Copper Cathodes" data-contact-open>Request Quote</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Scrap -->
+      <article class="product-card">
+        <div class="product-image" style="background-image:url('/images/metal-scrap-yard.jpg');"></div>
+        <div class="product-body">
+          <h3>Non‑Ferrous Scrap</h3>
+          <p>
+            Sourcing and supply of selected non‑ferrous scrap grades, supporting foundries and recyclers with stable volumes and consistent quality. [web:13][web:10]
+          </p>
+          <ul class="product-tags">
+            <li>Aluminium scrap</li>
+            <li>Copper scrap</li>
+            <li>Mixed non‑ferrous</li>
+          </ul>
+          <div class="product-actions">
+            <button class="btn-outline" data-modal-target="#scrapModal">Read more</button>
+            <button class="btn-primary" data-product="Non‑Ferrous Scrap" data-contact-open>Request Quote</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section id="why-us" class="section why-us">
+    <div class="section-title">
+      <h2>Why Work With Hanok</h2>
+      <p>Focused on reliability, documentation and long‑term partnerships.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Verified Supply</h3>
+        <p>Work with vetted smelters and yards with proven export track records and documentation support.</p>
+      </div>
+      <div class="why-item">
+        <h3>Quality & Specs</h3>
+        <p>Products aligned with common international specifications such as primary Aluminium A7 (99.7%) and LME‑grade Copper Cathodes. [web:1][web:9]</p>
+      </div>
+      <div class="why-item">
+        <h3>Logistics Support</h3>
+        <p>Support with container stuffing, inspection, and coordination with freight forwarders for FOB or CIF shipments.</p>
+      </div>
+      <div class="why-item">
+        <h3>Mandate Approach</h3>
+        <p>Transparent communication between buyer and producer, focusing on long‑term offtake commitments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Share your requirements for Aluminium A7, Copper Cathodes or Scrap.</p>
+    </div>
+    <div class="contact-grid">
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company *</label>
+            <input type="text" id="company" name="company" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="product">Product of Interest *</label>
+          <select id="product" name="product" required>
+            <option value="">Select product</option>
+            <option value="Aluminium Ingots A7">Aluminium Ingots A7</option>
+            <option value="Copper Cathodes">Copper Cathodes</option>
+            <option value="Non‑Ferrous Scrap">Non‑Ferrous Scrap</option>
+            <option value="Multiple Products">Multiple Products</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Approx. Quantity (MT per month)</label>
+          <input type="number" id="quantity" name="quantity" min="1" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message / Specification *</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Submit Inquiry</button>
+        <p id="formStatus" class="form-status"></p>
+      </form>
+
+      <div class="contact-info">
+        <h3>Direct Details</h3>
+        <p><strong>Hanok Industrial Group</strong><br/>Narnaund, Haryana, India</p>
+        <p>Website: <a href="https://hanokindustrialgroup.in" target="_blank" rel="noopener">hanokindustrialgroup.in</a></p>
+        <p>Email: info@hanokindustrialgroup.in</p>
+        <p>Preferred: Initial contact by email with LOI / specification.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Hanok Industrial Group. All rights reserved.</p>
+  </footer>
+
+  <!-- Modals -->
+  <!-- About Modal -->
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h2>About Hanok Industrial Group</h2>
+      <p>
+        Hanok Industrial Group operates as a trading mandate, aligning serious buyers with reliable metal producers. 
+        The focus is on clear procedures: LOI, ICPO, specification alignment, draft contract, inspection and shipment scheduling.
+      </p>
+      <p>
+        For aluminium, the group emphasizes primary Aluminium Ingots A7 with minimum 99.7% purity, widely used in casting, extrusion and high‑precision applications due to their corrosion resistance and conductivity. [web:1][web:4]
+      </p>
+      <p>
+        For copper, the group targets LME‑grade cathodes suitable for wire, cable, tube and alloy manufacturing, ensuring that documentation and assay meet common international expectations. [web:6][web:12]
+      </p>
+    </div>
   </div>
-</section>
 
-<!-- INQUIRY FORM -->
-<section class="section reveal" id="contact">
-  <h2>Buyer Inquiry</h2>
-  <form class="form" action="mailto:hanokindustrialgroup@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Your Name" required />
-    <input type="email" name="Email" placeholder="Your Email" required />
-    <input type="text" name="Company" placeholder="Company Name" />
-    <input type="text" name="Product" placeholder="Product of Interest" />
-    <textarea name="Message" placeholder="Inquiry Details" required></textarea>
-    <button type="submit" class="btn">Submit Inquiry</button>
-  </form>
-</section>
+  <!-- Aluminium Modal -->
+  <div class="modal" id="aluminiumModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h2>Aluminium Ingots A7 (99.7%)</h2>
+      <p>
+        Aluminium Ingots A7 are high‑purity products containing at least 99.7% aluminium, classified as primary aluminium and known for excellent corrosion resistance and electrical conductivity. [web:1][web:14]
+      </p>
+      <ul class="modal-list">
+        <li>Purity: 99.7% minimum Al content</li>
+        <li>Typical weight: 20–25 kg per ingot, strapped in bundles of ~1–1.2 MT</li>
+        <li>Applications: Automotive castings, electrical components, building profiles, packaging and general casting. [web:4]</li>
+        <li>Advantages: Low melting point, good fluidity, high conductivity and consistent quality for re‑melting. [web:1][web:4]</li>
+      </ul>
+      <p>
+        Hanok Industrial Group focuses on stable supply programs, offering containerized shipments with standard documentation and third‑party inspection when required.
+      </p>
+    </div>
+  </div>
 
-<footer class="footer">
-  © 2025 Hanok Industrial Group. All Rights Reserved.
-</footer>
+  <!-- Copper Modal -->
+  <div class="modal" id="copperModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h2>Copper Cathodes</h2>
+      <p>
+        Copper cathodes are high‑purity rectangular plates of refined copper, typically reaching 99.97–99.99% purity through electrolytic refining. [web:6][web:12]
+      </p>
+      <ul class="modal-list">
+        <li>Purity: Up to 99.99% Cu, often certified as LME Grade A or ASTM B115. [web:12][web:15]</li>
+        <li>Dimensions: Commonly around 0.5–1 m² surface area and 3–20 mm thickness, depending on producer. [web:6][web:18]</li>
+        <li>Applications: Wire rod, cables, tubes, sheets and over 400 copper‑based alloys in construction and energy sectors. [web:6][web:15]</li>
+        <li>Benefits: Excellent electrical and thermal conductivity, traceable production, and consistent performance in downstream processes. [web:6][web:12]</li>
+      </ul>
+      <p>
+        Typical shipments are palletized cathode bundles suitable for container loading, with assay certificates and packing lists attached.
+      </p>
+    </div>
+  </div>
 
+  <!-- Scrap Modal -->
+  <div class="modal" id="scrapModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h2>Non‑Ferrous Scrap</h2>
+      <p>
+        Non‑ferrous scrap such as aluminium and copper scrap is a critical raw material for secondary metal production and supports circular economy in metal industries. [web:13][web:10]
+      </p>
+      <ul class="modal-list">
+        <li>Grades: Selected aluminium scrap, copper scrap and mixed non‑ferrous grades based on buyer specification.</li>
+        <li>Usage: Re‑melting in foundries, rolling mills and secondary smelters to produce new ingots, billets or castings. [web:10][web:19]</li>
+        <li>Advantages: Reduced energy consumption and lower environmental impact compared to primary metal production. [web:10]</li>
+      </ul>
+      <p>
+        Hanok Industrial Group focuses on clean grades and transparent inspection to minimize quality disputes and maximize recovery for buyers.
+      </p>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>
