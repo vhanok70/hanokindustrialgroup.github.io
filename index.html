@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanok Industrial Group | Aluminum & Copper Trading</title>
+    <title>Hanok Industrial Group | Global Metals</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --gold: #D4AF37; --navy: #0a192f; --white: #ffffff; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: var(--navy); }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: var(--navy); overflow-x: hidden; }
         
-        /* Nav */
-        nav { position: fixed; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(10, 25, 47, 0.9); z-index: 1000; box-sizing: border-box; }
+        /* Navigation */
+        nav { position: fixed; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(10, 25, 47, 0.95); z-index: 1000; box-sizing: border-box; border-bottom: 1px solid var(--gold); }
         .logo { color: white; font-weight: bold; font-size: 1.5rem; text-transform: uppercase; }
         .logo span { color: var(--gold); }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 600; }
 
-        /* Hero */
-        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
-        .hero h1 { font-size: 4rem; margin-bottom: 10px; }
-        .btn-gold { background: var(--gold); color: var(--navy); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; border: none; cursor: pointer; }
+        /* Hero Section with Container Ship Background */
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070') no-repeat center center/cover; 
+            display: flex; align-items: center; justify-content: center; color: white; text-align: center; 
+        }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; }
+        .btn-gold { background: var(--gold); color: var(--navy); padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; border: none; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .btn-gold:hover { background: white; transform: scale(1.05); }
 
-        /* Products */
+        /* Product Cards */
         .section { padding: 80px 10%; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-content { padding: 20px; text-align: left; }
-        .details { display: none; padding: 15px; background: #eee; border-radius: 5px; margin-top: 10px; font-size: 0.85rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 40px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transition: 0.3s; border-bottom: 4px solid transparent; }
+        .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--gold); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-content { padding: 30px; text-align: left; }
+        .details { display: none; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--gold); margin-top: 15px; font-size: 0.9rem; }
         
-        /* Form */
-        .contact-sec { background: var(--navy); color: white; padding: 80px 10%; }
-        .contact-form { display: grid; gap: 15px; max-width: 600px; margin: 0 auto; }
-        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 5px; border: none; width: 100%; box-sizing: border-box; }
+        /* Contact Form */
+        .contact-sec { background: var(--navy); color: white; padding: 100px 10%; }
+        .contact-form { display: grid; gap: 20px; max-width: 700px; margin: 40px auto 0; }
+        .contact-form input, .contact-form textarea { padding: 18px; border-radius: 5px; border: 1px solid #233554; width: 100%; box-sizing: border-box; background: rgba(255,255,255,0.05); color: white; }
+        .contact-form input:focus { border-color: var(--gold); outline: none; }
     </style>
 </head>
 <body>
@@ -48,69 +55,86 @@
 
     <section class="hero">
         <div>
-            <h1>Global Metals & Minerals</h1>
-            <p style="color: var(--gold); font-weight: bold; letter-spacing: 2px;">ALUMINUM A7 | COPPER CATHODE | SCRAPS</p><br>
-            <button class="btn-gold" onclick="window.location.href='#products'">Explore Inventory</button>
+            <h1>Global Metals Supply</h1>
+            <p style="color: var(--gold); font-weight: bold; font-size: 1.2rem; letter-spacing: 4px;">ALUMINUM A7 | COPPER CATHODE | SCRAPS</p><br>
+            <button class="btn-gold" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Explore Inventory</button>
         </div>
     </section>
 
     <section class="section" id="about">
-        <h2>About Hanok Industrial Group</h2>
-        <p style="max-width: 800px; margin: 0 auto;">We are a premier global trading partner based in India, specializing in high-purity non-ferrous metals. Our mandate is to provide seamless logistics and LME-grade quality for Aluminum Ingots and Copper Cathodes to industrial giants worldwide.</p>
+        <h2 style="font-size: 2.5rem; text-transform: uppercase;">About Hanok Industrial Group</h2>
+        <p style="max-width: 900px; margin: 20px auto; font-size: 1.1rem; color: #555;">Hanok Industrial Group is a premier international trading house based in India. We specialize in the high-volume procurement and export of LME-grade non-ferrous metals, ensuring a reliable global supply chain for industrial giants.</p>
     </section>
 
-    <section class="section" id="products" style="background: #e9ecef;">
-        <h2>Our Commodities</h2>
+    <section class="section" id="products" style="background: #f0f2f5;">
+        <h2 style="font-size: 2.5rem; text-transform: uppercase;">Our Commodities</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=1000" alt="Aluminum">
+                <img src="https://images.unsplash.com/photo-1628156105315-0c37f0709f19?q=80&w=1000" alt="Aluminum Ingots A7">
                 <div class="card-content">
                     <h3>Aluminum Ingots A7</h3>
                     <p>99.7% Purity. LME Standards.</p>
-                    <button class="btn-gold" style="padding: 5px 15px;" onclick="toggleBtn('alu')">Read More</button>
-                    <div id="alu" class="details">Weight: 22.5kg/ingot. Origin: GCC/Africa. Standard: Al99.7.</div>
+                    <button class="btn-gold" style="padding: 8px 20px; font-size: 0.8rem;" onclick="toggleDetails('alu')">Read More</button>
+                    <div id="alu" class="details">
+                        <strong>Specification:</strong> Al 99.7% Min<br>
+                        <strong>Weight:</strong> 22.5kg per Ingot<br>
+                        <strong>Origin:</strong> GCC / CIS / Africa
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1563290632-68a8397a6f23?q=80&w=1000" alt="Copper">
+                <img src="https://images.unsplash.com/photo-1563290632-68a8397a6f23?q=80&w=1000" alt="Copper Cathode">
                 <div class="card-content">
                     <h3>Copper Cathode</h3>
                     <p>Grade A 99.99% Purity.</p>
-                    <button class="btn-gold" style="padding: 5px 15px;" onclick="toggleBtn('cop')">Read More</button>
-                    <div id="cop" class="details">Electrolytic Copper. LME Grade A. High conductivity for wire production.</div>
+                    <button class="btn-gold" style="padding: 8px 20px; font-size: 0.8rem;" onclick="toggleDetails('cop')">Read More</button>
+                    <div id="cop" class="details">
+                        <strong>Grade:</strong> Electrolytic Grade A<br>
+                        <strong>Purity:</strong> 99.99% Min<br>
+                        <strong>Standard:</strong> LME Registered Brands
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000" alt="Scrap">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000" alt="Industrial Scrap">
                 <div class="card-content">
                     <h3>Industrial Scraps</h3>
-                    <p>HMS 1 & 2 / Copper Scraps.</p>
-                    <button class="btn-gold" style="padding: 5px 15px;" onclick="toggleBtn('scr')">Read More</button>
-                    <div id="scr" class="details">Reliable supply of Millberry scrap and heavy melting steel for recycling.</div>
+                    <p>HMS 1 & 2 / Copper Wire Scraps.</p>
+                    <button class="btn-gold" style="padding: 8px 20px; font-size: 0.8rem;" onclick="toggleDetails('scr')">Read More</button>
+                    <div id="scr" class="details">
+                        <strong>Types:</strong> Millberry Copper, Aluminum Tense, HMS 1/2<br>
+                        <strong>Volume:</strong> 500 MT - 5000 MT Monthly
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="contact-sec" id="contact">
-        <h2 style="text-align: center;">Get In Touch</h2>
-        <p style="text-align: center;">Phone: +91 770 2310 750 | Email: hanokglobaltrader@gmail.com</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="5" placeholder="Order Details (MT, Destination)"></textarea>
-            <button type="submit" class="btn-gold">Send Formal Inquiry</button>
+        <h2 style="text-align: center; font-size: 2.5rem; color: var(--gold);">GET IN TOUCH</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Direct Phone: <strong>+91 770 2310 750</strong><br>Email: <strong>hanokglobaltrader@gmail.com</strong></p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Inquiry Sent to Hanok Industrial Group trade desk.');">
+            <input type="text" placeholder="Your Name / Company" required>
+            <input type="email" placeholder="Corporate Email Address" required>
+            <textarea rows="6" placeholder="Details (Product, Quantity, Destination Port)"></textarea>
+            <button type="submit" class="btn-gold">Send Formal Inquiry (LOI)</button>
         </form>
     </section>
 
+    <footer style="padding: 30px; text-align: center; background: #050c16; color: #8892b0; font-size: 0.8rem;">
+        &copy; 2025 Hanok Industrial Group. Global Metal Trading Desk.
+    </footer>
+
     <script>
-        // THIS MAKES THE BUTTONS WORK
-        function toggleBtn(id) {
+        // FIXED BUTTON LOGIC
+        function toggleDetails(id) {
             var box = document.getElementById(id);
             if (box.style.display === "block") {
                 box.style.display = "none";
+                event.target.innerText = "Read More";
             } else {
                 box.style.display = "block";
+                event.target.innerText = "Show Less";
             }
         }
     </script>
