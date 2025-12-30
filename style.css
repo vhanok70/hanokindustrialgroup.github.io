@@ -14,16 +14,17 @@
     }
 
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 75%;
-        background: var(--deep-navy);
-        flex-direction: column;
-        padding-top: 120px;
-        transition: var(--transition-slow);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+  position: fixed;
+  top: 70px;                 /* below navbar */
+  right: -100%;
+  height: calc(100vh - 70px);/* remove extra gap */
+  width: 75%;
+  background: var(--deep-navy);
+  flex-direction: column;
+  padding-top: 40px;         /* reduced */
+  transition: var(--transition-slow);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
     }
 
     .nav-links.active {
