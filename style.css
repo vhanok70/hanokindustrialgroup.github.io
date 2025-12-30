@@ -1,292 +1,54 @@
-/* HANOK INDUSTRIAL GROUP - MASTER STYLESHEET 
-    Theme: Professional Global Industrial
-    Color Palette: Navy #0a192f, Gold #D4AF37, Slate #8892b0
-*/
 
 :root {
     --gold: #D4AF37;
-    --gold-hover: #f1c40f;
-    --dark-navy: #0a192f;
-    --navy-light: #112240;
-    --slate: #8892b0;
+    --navy: #0a192f;
     --white: #ffffff;
-    --bg-light: #f9f9f9;
-    --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* 1. Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: #f4f4f4; overflow-x: hidden; }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--dark-navy);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* 2. Professional Navigation */
+/* Desktop Navigation */
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    z-index: 2000;
-    transition: var(--transition);
-    background: rgba(10, 25, 47, 0.2);
-    backdrop-filter: blur(10px);
+    position: fixed; width: 100%; padding: 20px 8%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10, 25, 47, 0.95); z-index: 1000; border-bottom: 2px solid var(--gold);
 }
 
-nav.sticky {
-    background: var(--dark-navy);
-    padding: 15px 8%;
-    border-bottom: 2px solid var(--gold);
-}
+.logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--white); text-transform: uppercase; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; list-style: none; }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.8rem; }
 
-.logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
-    color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.logo span {
-    color: var(--gold);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 35px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 400;
-    font-size: 0.9rem;
-    transition: var(--transition);
-    text-transform: uppercase;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-/* 3. Massive Hero Section */
+/* Hero with CONTAINER SHIP BACKGROUND */
 .hero {
     height: 100vh;
-    width: 100%;
-    /* Container Ship Background */
-    background: linear-gradient(rgba(10, 25, 47, 0.65), rgba(10, 25, 47, 0.65)), 
-                url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
+    background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), 
+                url('https://images.unsplash.com/photo-1494412574358-a162aa14f15b?q=80&w=2070');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
 }
 
-.hero-content h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    animation: fadeInUp 1s ease;
+.hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); text-transform: uppercase; }
+
+/* Grid Layout */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 8%; }
+
+.card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+.card:hover { transform: translateY(-10px); }
+.card img { width: 100%; height: 250px; object-fit: cover; }
+
+.details-pane { display: none; padding: 15px; background: #f9f9f9; border-left: 4px solid var(--gold); margin-top: 10px; }
+
+/* Buttons */
+.btn-cta, .read-more-btn, .submit-btn {
+    background: var(--gold); color: var(--navy); border: none; padding: 12px 25px; 
+    font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 5px;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    font-weight: bold;
+/* MOBILE VERSION */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .grid { grid-template-columns: 1fr; }
 }
-
-/* 4. Industrial Product Cards */
-.products {
-    padding: 120px 8%;
-    background: #f0f2f5;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 3rem;
-    margin-bottom: 60px;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    width: 80px;
-    height: 4px;
-    background: var(--gold);
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-}
-
-.card {
-    background: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    transition: var(--transition);
-    position: relative;
-    border-bottom: 5px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-15px);
-    border-bottom: 5px solid var(--gold);
-}
-
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.card:hover img {
-    transform: scale(1.1);
-}
-
-.card-body {
-    padding: 35px;
-    text-align: left;
-}
-
-.card-body h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: var(--dark-navy);
-}
-
-/* 5. Interactive Details Pane */
-.details-pane {
-    display: none;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid var(--gold);
-    animation: slideIn 0.5s ease;
-}
-
-.read-more-btn {
-    margin-top: 25px;
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 12px 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transition);
-    text-transform: uppercase;
-}
-
-.read-more-btn:hover {
-    background: var(--gold);
-    color: var(--white);
-}
-
-/* 6. Professional Contact Form */
-.contact {
-    padding: 120px 8%;
-    background: var(--dark-navy);
-    color: var(--white);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-}
-
-.contact-form {
-    background: rgba(255,255,255,0.03);
-    padding: 50px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 18px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid #333;
-    color: var(--white);
-    border-radius: 5px;
-    margin-bottom: 20px;
-    transition: var(--transition);
-}
-
-.form-group input:focus {
-    border-color: var(--gold);
-    background: rgba(255,255,255,0.08);
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 20px;
-    background: var(--gold);
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: var(--transition);
-}
-
-.submit-btn:hover {
-    background: var(--white);
-    color: var(--dark-navy);
-}
-
-/* 7. Keyframe Animations */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(-10px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-/* 8. Mobile Responsiveness */
-@media (max-width: 968px) {
-    .contact {
-        grid-template-columns: 1fr;
-    }
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-}
-
