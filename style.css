@@ -1,313 +1,237 @@
-/* HANOK INDUSTRIAL GROUP - MASTER STYLESHEET
-    Version: 1.0.0
-    Description: Professional Industrial Metal Trading Platform
-*/
-
-/* 1. GLOBAL VARIABLES & RESET */
-:root {
-    --primary-gold: #D4AF37;
-    --gold-hover: #f1c40f;
-    --deep-navy: #0a192f;
-    --navy-light: #112240;
-    --slate: #8892b0;
-    --white: #e6f1ff;
-    --pure-white: #ffffff;
-    --bg-light: #f4f7f6;
-    --transition-fast: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    --transition-slow: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
-    --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--pure-white);
-    color: var(--deep-navy);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-/* 2. REUSABLE COMPONENTS */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.btn-main {
-    padding: 18px 35px;
-    background: var(--primary-gold);
-    color: var(--deep-navy);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: none;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    display: inline-block;
-    text-decoration: none;
-}
-
-.btn-main:hover {
-    background: var(--pure-white);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* 3. NAVIGATION BAR */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 25px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transition-slow);
-}
-
-nav.sticky {
-    background: rgba(10, 25, 47, 0.95);
-    padding: 15px 8%;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--primary-gold);
-}
-
-.logo {
-    font-family: 'Oswald', sans-serif;
+/* =========================================================
+   9. ADVANCED MOBILE NAVIGATION (ENTERPRISE READY)
+========================================================= */
+.menu-toggle {
+    display: none;
     font-size: 1.8rem;
     color: var(--pure-white);
-    letter-spacing: 3px;
-    font-weight: 700;
-}
-
-.logo span {
-    color: var(--primary-gold);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 40px;
-}
-
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    transition: var(--transition-fast);
-}
-
-.nav-links a:hover {
-    color: var(--primary-gold);
-}
-
-/* 4. HERO SECTION (CONTAINER SHIP) */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
-                url('https://images.unsplash.com/photo-1570114912903-888e2239634e?q=80&w=2070');
-    background-size: cover;
-    background-attachment: fixed;
-    color: var(--pure-white);
-}
-
-.hero-content h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    color: var(--primary-gold);
-    margin-bottom: 40px;
-    letter-spacing: 5px;
-}
-
-/* 5. PRODUCT CARDS & GRID */
-.products {
-    padding: 120px 0;
-    background: var(--bg-light);
-}
-
-.section-title {
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 70px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    width: 80px;
-    height: 4px;
-    background: var(--primary-gold);
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 0 8%;
-}
-
-.card {
-    background: var(--pure-white);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: var(--transition-fast);
-    border-bottom: 5px solid transparent;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.card:hover {
-    transform: translateY(-15px);
-    border-bottom: 5px solid var(--primary-gold);
-    box-shadow: var(--shadow);
-}
-
-.card-img {
-    height: 260px;
-    overflow: hidden;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.card:hover .card-img img {
-    transform: scale(1.1);
-}
-
-.card-body {
-    padding: 35px;
-}
-
-.card-body h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: var(--deep-navy);
-}
-
-.read-more-btn {
-    margin-top: 25px;
-    background: none;
-    border: 1px solid var(--primary-gold);
-    color: var(--primary-gold);
-    padding: 10px 25px;
-    font-weight: 600;
     cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.read-more-btn:hover {
-    background: var(--primary-gold);
-    color: var(--deep-navy);
-}
-
-/* 6. CONTACT SECTION */
-.contact {
-    padding: 120px 8%;
-    background: var(--deep-navy);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    color: var(--pure-white);
-}
-
-.contact-info h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    color: var(--primary-gold);
-    font-family: 'Oswald', sans-serif;
-}
-
-.info-box {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.info-box i {
-    font-size: 1.5rem;
-    color: var(--primary-gold);
-    margin-right: 20px;
-}
-
-.contact-form input, .contact-form select, .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    background: var(--navy-light);
-    border: 1px solid #233554;
-    color: var(--white);
-    font-family: inherit;
-}
-
-.contact-form input:focus {
-    border-color: var(--primary-gold);
-}
-
-/* 7. ANIMATIONS */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.details-pane {
-    display: none;
-    animation: fadeIn 0.4s ease forwards;
-}
-
-/* 8. RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-    .contact {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    
-    .hero-content h1 {
-        font-size: 3.5rem;
-    }
 }
 
 @media (max-width: 768px) {
-    nav {
-        padding: 20px 5%;
+    .menu-toggle {
+        display: block;
     }
+
     .nav-links {
-        display: none; /* Mobile Menu Logic would go here */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 75%;
+        background: var(--deep-navy);
+        flex-direction: column;
+        padding-top: 120px;
+        transition: var(--transition-slow);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
     }
 }
 
+/* =========================================================
+   10. PRODUCT DETAIL PAGE (SPECIFICATIONS & CTA)
+========================================================= */
+.product-detail {
+    padding: 120px 8%;
+    background: var(--pure-white);
+}
+
+.product-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.product-header img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+}
+
+.product-info h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    color: var(--slate);
+    margin-bottom: 30px;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.spec-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.spec-table td {
+    padding: 14px 10px;
+    font-size: 0.95rem;
+}
+
+.spec-table td:first-child {
+    font-weight: 600;
+    color: var(--deep-navy);
+}
+
+/* =========================================================
+   11. TRUST, COMPLIANCE & CERTIFICATIONS
+========================================================= */
+.trust {
+    padding: 120px 8%;
+    background: var(--bg-light);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.trust-card {
+    background: var(--pure-white);
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition-fast);
+}
+
+.trust-card:hover {
+    transform: translateY(-10px);
+}
+
+.trust-card i {
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 20px;
+}
+
+.trust-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* =========================================================
+   12. LOGISTICS & PROCESS TIMELINE
+========================================================= */
+.process {
+    padding: 120px 8%;
+    background: var(--pure-white);
+}
+
+.timeline {
+    position: relative;
+    margin-top: 80px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-gold);
+    transform: translateX(-50%);
+}
+
+.step {
+    width: 45%;
+    padding: 30px;
+    background: var(--bg-light);
+    position: relative;
+    margin-bottom: 50px;
+    box-shadow: var(--shadow);
+}
+
+.step.left { left: 0; }
+.step.right { left: 55%; }
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-gold);
+    border-radius: 50%;
+}
+
+.step.left::before { right: -10px; }
+.step.right::before { left: -10px; }
+
+@media (max-width: 900px) {
+    .timeline::before {
+        left: 0;
+    }
+    .step,
+    .step.left,
+    .step.right {
+        width: 100%;
+        left: 0;
+        padding-left: 40px;
+    }
+    .step::before {
+        left: -10px;
+    }
+}
+
+/* =========================================================
+   13. UTILITY CLASSES (ENTERPRISE SCALING)
+========================================================= */
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+.mt-80 { margin-top: 80px; }
+
+.text-center { text-align: center; }
+.text-gold { color: var(--primary-gold); }
+.text-muted { color: var(--slate); }
+
+.hide-mobile {
+    display: block;
+}
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+
+/* =========================================================
+   14. ADMIN / DASHBOARD BASE (FUTURE BACKEND)
+========================================================= */
+.admin-panel {
+    background: var(--deep-navy);
+    color: var(--white);
+    min-height: 100vh;
+    padding: 60px;
+}
+
+.admin-card {
+    background: var(--navy-light);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.admin-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-gold);
+}
