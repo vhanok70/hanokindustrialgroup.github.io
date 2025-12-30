@@ -9,8 +9,17 @@
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+
+  .hero {
+    min-height: calc(100vh - 70px);
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
     }
 
     .nav-links {
