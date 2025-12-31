@@ -849,3 +849,68 @@ footer{
 #navbar.hide {
   transform: translateY(-100%);
 }
+/* ================================
+   MOBILE RIGHT-SIDE MENU (FINAL)
+================================ */
+
+@media (max-width: 768px) {
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 1300;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 64px;                /* below navbar */
+    right: 0;
+    width: 260px;             /* NOT full screen */
+    height: calc(100vh - 64px);
+
+    background: #0a2540;
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+
+    z-index: 1200;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    margin: 14px 0;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    width: 100%;
+    display: block;
+  }
+
+  /* Submenu */
+  .has-submenu .submenu {
+    display: none;
+    background: #0b2a4a;
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  .has-submenu.open .submenu {
+    display: block;
+  }
+}
