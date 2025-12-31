@@ -45,3 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fadeItems.forEach(el => observer.observe(el));
 
 });
+// Commodities submenu toggle
+const submenuToggle = document.querySelector('.submenu-toggle');
+const submenu = document.querySelector('.submenu');
+
+if (submenuToggle && submenu) {
+  submenuToggle.addEventListener('click', () => {
+    submenu.classList.toggle('active');
+  });
+}
