@@ -622,3 +622,23 @@ img {
     font-size:0.9rem;
   }
 }
+/* ===== SECTION HEADER (GLOBAL) ===== */
+.section-title{
+  text-align:center;
+  font-size:clamp(2rem, 4vw, 2.6rem);
+  font-weight:800;
+  color:#0a192f;
+  margin-bottom:50px;
+  position:relative;
+}
+
+/* Gold underline */
+.section-title::after{
+  content:"";
+  width:70px;
+  height:4px;
+  background:#d4af37;
+  display:block;
+  margin:14px auto 0;
+  border-radius:2px;
+}
