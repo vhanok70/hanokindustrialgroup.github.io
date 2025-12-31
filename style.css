@@ -589,3 +589,36 @@ img {
     grid-template-columns:1fr;
   }
 }
+/* ===== HERO CTA FIX (EXPLORE INVENTORY) ===== */
+.hero-cta{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 38px;
+  font-size:0.95rem;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+
+  background:#d4af37;          /* export gold */
+  color:#0a192f;
+  text-decoration:none;
+
+  border-radius:6px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  transition:all 0.3s ease;
+}
+
+/* Hover */
+.hero-cta:hover{
+  background:#ffffff;
+  color:#0a192f;
+  transform:translateY(-2px);
+}
+
+/* Mobile fix */
+@media(max-width:768px){
+  .hero-cta{
+    padding:14px 30px;
+    font-size:0.9rem;
+  }
+}
