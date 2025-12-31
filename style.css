@@ -977,7 +977,7 @@ footer{
   padding: 60px 16px;
 }
 
-.about-container {
+.about-block {
   max-width: 1100px;
   margin: 0 auto;
   background: #ffffff;
@@ -987,14 +987,15 @@ footer{
   text-align: center;
 }
 
-.about-container h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #0a192f;
-  margin-bottom: 16px;
+.about-block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 12px;
 }
 
-.about-container h2::after {
+/* Title underline (gold) */
+.section-title::after {
   content: "";
   display: block;
   width: 40px;
@@ -1004,16 +1005,9 @@ footer{
   border-radius: 2px;
 }
 
-.about-container p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 12px;
-}
-
 /* Mobile polish */
 @media (max-width: 768px) {
-  .about-container {
+  .about-block {
     padding: 28px 20px;
   }
 }
