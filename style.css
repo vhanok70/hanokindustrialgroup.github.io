@@ -903,54 +903,38 @@ img {
   }
 
   .nav-links{
-    position:fixed;
+    display:none;
+    position:absolute;
     top:65px;
-    right:-100%;
-    width:260px;
-    height:calc(100vh - 65px);
-
+    right:12px;
+    width:220px;
     background:#0a192f;
 
-    display:flex;
     flex-direction:column;
-    align-items:flex-start;
-    justify-content:flex-start;
+    padding:14px;
+    gap:12px;
 
-    padding:20px;
-    gap:18px;
-
-    transition:right 0.35s ease;
+    border-radius:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.35);
     z-index:1000;
   }
 
   .nav-links.active{
-    right:0;
+    display:flex;
   }
 
   .nav-links li{
     width:100%;
+    text-align:center;
   }
 
-  .nav-links a,
-  .submenu-toggle{
-    font-size:0.95rem;
-    padding:8px 0;
-    display:block;
-    width:100%;
-  }
-
+  /* SUBMENU */
   .has-submenu .submenu{
     display:none;
-    flex-direction:column;
-    padding-left:10px;
+    margin-top:8px;
   }
 
   .has-submenu.open .submenu{
-    display:flex;
-  }
-
-  .submenu a{
-    font-size:0.9rem;
-    color:#d4af37;
+    display:block;
   }
 }
