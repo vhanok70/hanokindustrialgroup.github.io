@@ -605,3 +605,60 @@ footer{
     padding: 28px 22px;
   }
 }
+/* ===== ABOUT INTRO – PREMIUM FIX ===== */
+.about-section {
+  background: #f5f7fa;
+  padding: 70px 16px;
+}
+
+.about-section .container {
+  max-width: 760px;          /* 🔥 NOT FULL WIDTH */
+  margin: auto;
+  background: #ffffff;
+  padding: 42px 28px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* TITLE */
+.about-section h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #0a192f;
+  margin-bottom: 14px;
+}
+
+/* GOLD LINE */
+.about-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #d4af37;
+  margin: 12px auto 22px;
+  border-radius: 2px;
+}
+
+/* TEXT */
+.about-section p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+/* MOBILE POLISH */
+@media (max-width: 600px) {
+  .about-section .container {
+    padding: 34px 22px;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+}
