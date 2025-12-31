@@ -664,21 +664,4 @@ img {
   margin-bottom:8px;
   color:#333;
 }
-/* TRUST BOX FIX FOR DARK BACKGROUND */
-.trust-box{
-  margin-top:20px;
-  padding-top:15px;
-  border-top:1px solid rgba(255,255,255,0.2);
-}
 
-.trust-box h3{
-  font-size:1.05rem;
-  margin-bottom:12px;
-  color:#ffffff;   /* MAKE TITLE WHITE */
-}
-
-.trust-box li{
-  font-size:0.95rem;
-  margin-bottom:8px;
-  color:#e6e6e6;   /* LIGHT TEXT */
-}
