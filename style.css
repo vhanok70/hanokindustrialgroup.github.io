@@ -770,27 +770,35 @@ img {
     display:flex;
   }
 }
-/* existing css */
-
-/* footer styles */
-/* trust cards */
-/* animations */
-/* other mobile fixes */
-
-/* ================= MOBILE NAVBAR FIX ================= */
+/* ===== MOBILE NAVBAR – FINAL FIX ===== */
 @media (max-width: 900px) {
+
+  .menu-btn {
+    display: block;
+    font-size: 28px;
+    z-index: 2001;
+  }
+
   .nav-links {
-    display: none;
-    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 70px);
     background: #0a192f;
-    position: absolute;
-    top: 65px;
-    right: 0;
-    width: 220px;
-    padding: 15px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    transition: right 0.3s ease;
+    z-index: 2000;
   }
 
   .nav-links.active {
-    display: flex;
+    right: 0;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    font-size: 1rem;
   }
 }
