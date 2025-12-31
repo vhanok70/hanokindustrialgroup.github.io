@@ -829,3 +829,6 @@ footer{
 .nav-links {
   z-index: 1200;
 }
+.logo span {
+  color: #c9a227;
+}
