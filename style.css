@@ -502,3 +502,90 @@ img {
     height: 210px;
   }
 }
+/* ===== TRUST & SALES – CLEAN EXPORT BLOCKS ===== */
+.trust-sales{
+  background:#0a192f;
+  padding:70px 20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+/* Card base */
+.trust-card,
+.sales-card{
+  background:#ffffff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Headings */
+.trust-card h2,
+.sales-card h2{
+  font-size:1.5rem;
+  margin-bottom:20px;
+  color:#0a192f;
+  border-left:4px solid #d4af37;
+  padding-left:12px;
+}
+
+/* Why list */
+.trust-card ul{
+  list-style:none;
+  padding:0;
+}
+
+.trust-card li{
+  margin-bottom:12px;
+  padding-left:18px;
+  position:relative;
+}
+
+.trust-card li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:#d4af37;
+  font-weight:bold;
+}
+
+/* Sales text */
+.sales-card p{
+  margin-bottom:10px;
+  color:#333;
+}
+
+/* Form */
+.sales-card form input,
+.sales-card form select,
+.sales-card form textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:14px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+.sales-card form button{
+  width:100%;
+  padding:14px;
+  background:#d4af37;
+  border:none;
+  font-weight:700;
+  color:#0a192f;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.sales-card form button:hover{
+  background:#0a192f;
+  color:#fff;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:768px){
+  .trust-sales{
+    grid-template-columns:1fr;
+  }
+}
