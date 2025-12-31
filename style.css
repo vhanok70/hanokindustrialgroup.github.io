@@ -807,3 +807,25 @@ footer{
   position: relative;
   z-index: 1300;
 }
+/* ===== LOGO VISIBILITY FIX (FINAL) ===== */
+
+.logo {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 600;
+}
+
+#navbar {
+  background: linear-gradient(180deg, #071a2f 0%, #0a2540 100%);
+}
+
+/* Keep logo always above menu overlay */
+.logo {
+  position: relative;
+  z-index: 1301;
+}
+
+/* Mobile menu should NOT cover navbar */
+.nav-links {
+  z-index: 1200;
+}
