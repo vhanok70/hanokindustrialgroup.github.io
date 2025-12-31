@@ -75,6 +75,32 @@ body{
   text-transform:uppercase;
   font-size:0.85rem;
 }
+  /* ===== MOBILE HEADER FIX (DO NOT REMOVE) ===== */
+@media(max-width:900px){
+
+  header{
+    flex-direction:row;       /* KEEP LOGO + MENU IN ONE LINE */
+    justify-content:space-between;
+    padding:14px 6%;
+  }
+
+  .logo{
+    font-size:1.2rem;
+    white-space:nowrap;       /* PREVENT HANOK / INDUSTRIAL SPLIT */
+  }
+
+  nav{
+    display:flex;
+    flex-direction:row;       /* PREVENT VERTICAL MENU */
+  }
+
+  nav a{
+    margin-left:16px;
+    font-size:0.78rem;
+    white-space:nowrap;
+  }
+
+}
 
 /* CONTAINER */
 .container{
