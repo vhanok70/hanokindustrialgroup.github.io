@@ -1,215 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Copper Cathode | Hanok Industrial Group</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Copper Cathode | Hanok Industrial Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --navy:#0a192f;
-  --gold:#d4af37;
-  --light:#f5f7fa;
-  --white:#ffffff;
-}
+  <style>
+    :root{
+      --navy:#0a192f;
+      --gold:#d4af37;
+      --light:#f5f7fa;
+      --white:#ffffff;
+    }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Montserrat', sans-serif;
-  background:var(--light);
-  color:#222;
-  line-height:1.7;
-  overflow-x:hidden;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-/* ================= HEADER ================= */
-header{
-  background:var(--navy);
-  padding:18px 8%;
-  display:flex;
-  justify-content:center;
-}
+    body{
+      font-family:'Montserrat', sans-serif;
+      background:var(--light);
+      color:#222;
+      line-height:1.7;
+    }
 
-.header-inner{
-  width:100%;
-  max-width:1200px;
-  display:flex;
-  align-items:center;
-}
+    /* ================= HEADER ================= */
+    header{
+      background:var(--navy);
+      padding:16px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-.logo{
-  font-family:'Oswald', sans-serif;
-  font-size:1.4rem;
-  color:#fff;
-  letter-spacing:2px;
-}
+    .logo{
+      font-family:'Oswald', sans-serif;
+      font-size:1.4rem;
+      color:#fff;
+      letter-spacing:2px;
+    }
 
-.logo span{color:var(--gold);}
+    .logo span{
+      color:var(--gold);
+    }
 
-nav{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
-}
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:25px;
+      font-size:0.9rem;
+      text-transform:uppercase;
+    }
 
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:28px;
-  font-size:0.9rem;
-  text-transform:uppercase;
-}
+    /* ================= HERO ================= */
+    .hero{
+      padding:120px 8% 80px;
+      background:
+        linear-gradient(rgba(10,25,47,.85), rgba(10,25,47,.85)),
+        url("../A_high-resolution_photograph_captures_stacks_of_co.png");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+    }
 
-/* ================= HERO ================= */
-.hero{
-  padding:120px 8% 120px;
-  background:
-    linear-gradient(rgba(10,25,47,.85), rgba(10,25,47,.85)),
-    url("../A_high-resolution_photograph_captures_stacks_of_co.png");
-  background-size:cover;
-  background-position:center;
-  color:#fff;
-}
+    .hero h1{
+      font-family:'Oswald',sans-serif;
+      font-size:clamp(2.2rem,5vw,3.2rem);
+      margin-bottom:10px;
+    }
 
-.hero h1{
-  font-family:'Oswald', sans-serif;
-  font-size:clamp(2.2rem,5vw,3.2rem);
-  margin-bottom:10px;
-}
+    .hero p{
+      color:var(--gold);
+      font-weight:600;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:0.85rem;
+    }
 
-.hero p{
-  color:var(--gold);
-  font-weight:600;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  font-size:0.85rem;
-}
+    /* ================= CONTAINER ================= */
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:70px 20px;
+    }
 
-/* ================= CONTAINER ================= */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:70px 20px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:50px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:1.3fr 0.7fr;
-  gap:50px;
-}
+    /* ================= LEFT BLOCK STACK ================= */
+    .box-stack{
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
 
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr;}
-}
+    .content-block{
+      background:#fff;
+      padding:28px;
+      border-radius:10px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.06);
+    }
 
-/* ================= CONTENT BLOCKS ================= */
-.block{
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.06);
-  margin-bottom:28px;
-}
+    .content-block h3{
+      font-size:1.2rem;
+      margin-bottom:14px;
+      border-left:4px solid var(--gold);
+      padding-left:12px;
+      color:var(--navy);
+    }
 
-.block h3{
-  font-size:1.15rem;
-  margin-bottom:14px;
-  border-left:4px solid var(--gold);
-  padding-left:12px;
-  color:var(--navy);
-}
+    .content-block ul{
+      padding-left:18px;
+    }
 
-.block ul{padding-left:18px;}
-.block li{margin-bottom:8px;font-size:0.95rem;}
+    .content-block li{
+      margin-bottom:8px;
+      font-size:0.95rem;
+    }
 
-/* ================= TABLE ================= */
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:10px;
-}
+    /* ================= TABLE ================= */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+    }
 
-table th, table td{
-  border:1px solid #ddd;
-  padding:12px;
-  font-size:0.95rem;
-}
+    table th,
+    table td{
+      border:1px solid #ddd;
+      padding:12px;
+      text-align:left;
+      font-size:0.95rem;
+    }
 
-table th{
-  background:#f1f1f1;
-  width:45%;
-}
+    table th{
+      background:#f1f1f1;
+      width:45%;
+    }
 
-/* ================= SIDEBAR ================= */
-.side{
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
-}
+    /* ================= RIGHT SIDEBAR ================= */
+    .side-box{
+      background:#fff;
+      padding:28px;
+      border-radius:10px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    }
 
-.side h4{
-  font-size:1.1rem;
-  margin-bottom:14px;
-  color:var(--navy);
-  border-bottom:2px solid var(--gold);
-  padding-bottom:8px;
-}
+    .side-box h4{
+      font-size:1.1rem;
+      margin-bottom:14px;
+      color:var(--navy);
+      border-bottom:2px solid var(--gold);
+      padding-bottom:8px;
+    }
 
-.side ul{padding-left:18px;margin-bottom:18px;}
-.side li{margin-bottom:8px;font-size:0.95rem;}
+    .side-box ul{
+      padding-left:18px;
+      margin-bottom:18px;
+    }
 
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 28px;
-  background:var(--gold);
-  color:#0a192f;
-  text-decoration:none;
-  font-weight:700;
-  border-radius:6px;
-}
+    .side-box li{
+      margin-bottom:8px;
+      font-size:0.95rem;
+    }
 
-/* ================= FOOTER ================= */
-footer{
-  background:#050c16;
-  color:#aaa;
-  text-align:center;
-  padding:20px;
-  font-size:0.85rem;
-}
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 28px;
+      background:var(--gold);
+      color:#0a192f;
+      text-decoration:none;
+      font-weight:700;
+      border-radius:6px;
+    }
 
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-  header{padding:14px 6%;}
-  .logo{font-size:1.2rem;white-space:nowrap;}
-  nav a{margin-left:16px;font-size:0.78rem;}
-}
-</style>
+    /* ================= FOOTER ================= */
+    footer{
+      background:#050c16;
+      color:#aaa;
+      text-align:center;
+      padding:20px;
+      font-size:0.85rem;
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width:900px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      header{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      nav a{
+        margin-left:15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <header>
-  <div class="header-inner">
-    <div class="logo">HANOK <span>INDUSTRIAL</span></div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/#products">Commodities</a>
-      <a href="/#contact">Contact</a>
-    </nav>
-  </div>
+  <div class="logo">HANOK <span>INDUSTRIAL</span></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/#products">Commodities</a>
+    <a href="/#contact">Contact</a>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <h1>Copper Cathode</h1>
-  <p>Grade A · 99.99% Purity · Global Supply</p>
+  <p>GRADE A · 99.99% PURITY · GLOBAL SUPPLY</p>
 </section>
 
 <!-- CONTENT -->
@@ -217,8 +233,9 @@ footer{
   <div class="grid">
 
     <!-- LEFT -->
-    <div>
-      <div class="block">
+    <div class="box-stack">
+
+      <div class="content-block">
         <h3>Product Overview</h3>
         <p>
           Hanok Industrial Group supplies <strong>Grade A Copper Cathode</strong>
@@ -227,7 +244,7 @@ footer{
         </p>
       </div>
 
-      <div class="block">
+      <div class="content-block">
         <h3>Industry Usage</h3>
         <p>
           Copper cathodes are widely used in electrical, electronics,
@@ -236,7 +253,7 @@ footer{
         </p>
       </div>
 
-      <div class="block">
+      <div class="content-block">
         <h3>Typical Applications</h3>
         <ul>
           <li>Electrical wires & conductors</li>
@@ -247,7 +264,7 @@ footer{
         </ul>
       </div>
 
-      <div class="block">
+      <div class="content-block">
         <h3>Chemical Composition (Typical)</h3>
         <table>
           <tr><th>Copper (Cu)</th><td>99.99% Min</td></tr>
@@ -255,24 +272,33 @@ footer{
           <tr><th>Other Impurities</th><td>0.01% Max</td></tr>
         </table>
       </div>
+
     </div>
 
     <!-- RIGHT -->
-    <div class="side">
+    <div class="side-box">
       <h4>Technical Specifications</h4>
       <table>
         <tr><th>Grade</th><td>A</td></tr>
         <tr><th>Purity</th><td>99.99% Min</td></tr>
-        <tr><th>Cathode Weight</th><td>~125 kg</td></tr>
+        <tr><th>Cathode Weight</th><td>~125 Kg</td></tr>
         <tr><th>Standard</th><td>LME / ASTM / GB</td></tr>
         <tr><th>Origin</th><td>As per contract</td></tr>
         <tr><th>MOQ</th><td>1,000 MT</td></tr>
         <tr><th>Delivery Terms</th><td>FOB / CIF / CFR</td></tr>
       </table>
 
+      <h4>Packaging & Logistics</h4>
+      <ul>
+        <li>Export-grade bundled cathodes</li>
+        <li>Secure strapped packaging</li>
+        <li>Containerized or break-bulk shipment</li>
+        <li>Shipment from approved global ports</li>
+      </ul>
+
       <h4>Inspection & Documentation</h4>
       <ul>
-        <li>SGS / BV / Intertek inspection</li>
+        <li>SGS / BV / Intertek inspection (optional)</li>
         <li>Certificate of Analysis (COA)</li>
         <li>Certificate of Origin (COO)</li>
         <li>Commercial Invoice & Packing List</li>
@@ -286,7 +312,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-© 2025 Hanok Industrial Group. All Rights Reserved.
+  © 2025 Hanok Industrial Group. All Rights Reserved.
 </footer>
 
 </body>
