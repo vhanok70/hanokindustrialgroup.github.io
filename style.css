@@ -1011,3 +1011,29 @@ footer{
     padding: 28px 20px;
   }
 }
+.about-btn-wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.about-btn {
+  display: inline-block;
+  padding: 12px 28px;
+
+  background: #d4af37; /* gold */
+  color: #071a2f;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.about-btn:hover {
+  background: #c19b2e;
+  transform: translateY(-2px);
+}
