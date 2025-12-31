@@ -1,7 +1,7 @@
-/* =========================================
+/* =====================================
    HANOK INDUSTRIAL GROUP - MAIN JS
    CLEAN • STABLE • MOBILE READY
-========================================= */
+===================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuBtn && navLinks) {
     menuBtn.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
     });
 
-    // Close menu when link clicked
+    // Close menu when any link is clicked
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
       });
     });
   }
@@ -53,19 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(0)";
         entry.target.style.transition = "all 0.8s ease";
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
 
   animatedItems.forEach(el => observer.observe(el));
-
-  /* ===============================
-     FIX BODY SCROLL WHEN MENU OPEN
-  =============================== */
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-      document.body.classList.toggle("menu-open");
-    });
-  }
 
 });
