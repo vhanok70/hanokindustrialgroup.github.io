@@ -914,3 +914,83 @@ footer{
     display: block;
   }
 }
+/* ===============================
+   MOBILE SIDE DRAWER NAV
+================================ */
+
+@media (max-width: 768px) {
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Overlay */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1100;
+  }
+
+  body.menu-open .menu-overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Side drawer */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: linear-gradient(180deg, #071a2f, #0a2540);
+    padding: 100px 25px 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1200;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  /* Submenu */
+  .has-submenu .submenu {
+    margin-top: 10px;
+    background: #0b2a4a;
+    border-radius: 8px;
+    padding: 10px 0;
+    display: none;
+  }
+
+  .has-submenu.open .submenu {
+    display: block;
+  }
+
+  .submenu li {
+    padding: 8px 0;
+  }
+
+    }
