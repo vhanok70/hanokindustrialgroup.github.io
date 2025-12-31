@@ -63,3 +63,23 @@ document.addEventListener("DOMContentLoaded", () => {
   animatedItems.forEach(el => observer.observe(el));
 
 });
+/* =========================
+   HIDE NAVBAR ON SCROLL
+========================= */
+
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 80) {
+    // scrolling down
+    navbar.classList.add("hide");
+  } else {
+    // scrolling up
+    navbar.classList.remove("hide");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
