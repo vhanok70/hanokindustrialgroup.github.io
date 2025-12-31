@@ -664,4 +664,37 @@ img {
   margin-bottom:8px;
   color:#333;
 }
+/* ===== MOBILE NAV FIX ===== */
+.menu-btn{
+  display:none;
+  font-size:1.6rem;
+  color:#fff;
+  cursor:pointer;
+}
 
+@media (max-width: 900px){
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:#0a192f;
+    width:100%;
+    flex-direction:column;
+    text-align:center;
+    display:none;
+    padding:20px 0;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .nav-links li{
+    margin:15px 0;
+  }
+}
