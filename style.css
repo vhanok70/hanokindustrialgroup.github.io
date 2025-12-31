@@ -894,3 +894,63 @@ img {
     text-align: center;
   }
 }
+/* ========= FINAL MOBILE NAV (CLEAN) ========= */
+@media (max-width: 900px){
+
+  .menu-btn{
+    display:block;
+    z-index:1001;
+  }
+
+  .nav-links{
+    position:fixed;
+    top:65px;
+    right:-100%;
+    width:260px;
+    height:calc(100vh - 65px);
+
+    background:#0a192f;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+
+    padding:20px;
+    gap:18px;
+
+    transition:right 0.35s ease;
+    z-index:1000;
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .nav-links li{
+    width:100%;
+  }
+
+  .nav-links a,
+  .submenu-toggle{
+    font-size:0.95rem;
+    padding:8px 0;
+    display:block;
+    width:100%;
+  }
+
+  .has-submenu .submenu{
+    display:none;
+    flex-direction:column;
+    padding-left:10px;
+  }
+
+  .has-submenu.open .submenu{
+    display:flex;
+  }
+
+  .submenu a{
+    font-size:0.9rem;
+    color:#d4af37;
+  }
+}
