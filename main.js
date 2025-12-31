@@ -5,44 +5,45 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ========= MOBILE MENU ========= */
+  /* ===============================
+     MOBILE MENU TOGGLE
+  =============================== */
   const menuBtn = document.querySelector(".menu-btn");
   const navLinks = document.querySelector(".nav-links");
-  const body = document.body;
 
   if (menuBtn && navLinks) {
     menuBtn.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      body.classList.toggle("menu-open");
-    });
-
-    /* Close menu on link click */
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        body.classList.remove("menu-open");
-        document.querySelector(".has-submenu")?.classList.remove("open");
-      });
     });
   }
 
-  /* ========= SUBMENU (COMMODITIES) ========= */
-  const submenuToggle = document.querySelector(".submenu-toggle");
-  const submenuItem = document.querySelector(".has-submenu");
-
-  if (submenuToggle && submenuItem) {
-    submenuToggle.addEventListener("click", () => {
-      submenuItem.classList.toggle("open");
-    });
-  }
-
-  /* ========= CLOSE MENU ON SCROLL ========= */
-  window.addEventListener("scroll", () => {
-    if (navLinks?.classList.contains("active")) {
+  /* ===============================
+     CLOSE MENU ON LINK CLICK
+  =============================== */
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
       navLinks.classList.remove("active");
-      body.classList.remove("menu-open");
-      submenuItem?.classList.remove("open");
-    }
+    });
   });
+
+  /* ===============================
+     CLOSE MENU ON SCROLL
+  =============================== */
+  window.addEventListener("scroll", () => {
+    navLinks.classList.remove("active");
+  });
+
+  /* ===============================
+     COMMODITIES SUBMENU TOGGLE
+  =============================== */
+  const submenuToggle = document.querySelector(".submenu-toggle");
+  const submenuParent = document.querySelector(".has-submenu");
+
+  if (submenuToggle && submenuParent) {
+    submenuToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      submenuParent.classList.toggle("open");
+    });
+  }
 
 });
