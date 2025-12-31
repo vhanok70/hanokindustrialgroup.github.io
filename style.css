@@ -832,3 +832,20 @@ footer{
 .logo span {
   color: #c9a227;
 }
+/* =========================
+   NAVBAR HIDE ON SCROLL
+========================= */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1200;
+}
+
+/* When hidden */
+#navbar.hide {
+  transform: translateY(-100%);
+}
