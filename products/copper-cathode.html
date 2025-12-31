@@ -27,31 +27,33 @@ body{
 
 /* ================= HEADER ================= */
     header{
-      background:var(--navy);
-      padding:16px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+  background:var(--navy);
+  padding:16px 8%;
+  display:flex;
+  align-items:center;          /* vertical center */
+}
 
-    .logo{
-      font-family:'Oswald', sans-serif;
-      font-size:1.4rem;
-      color:#fff;
-      letter-spacing:2px;
-    }
+.logo{
+  font-family:'Oswald', sans-serif;
+  font-size:1.4rem;
+  color:#fff;
+  letter-spacing:2px;
+}
 
-    .logo span{
-      color:var(--gold);
-    }
+nav{
+  margin-left:auto;            /* pushes menu to right */
+  display:flex;
+  align-items:center;          /* vertical center */
+}
 
-    nav a{
-      color:#fff;
-      text-decoration:none;
-      margin-left:25px;
-      font-size:0.9rem;
-      text-transform:uppercase;
-    }
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:28px;
+  font-size:0.9rem;
+  text-transform:uppercase;
+  line-height:1;               /* IMPORTANT */
+}
 
 /* HERO */
 .hero{
