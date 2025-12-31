@@ -802,3 +802,41 @@ img {
     font-size: 1rem;
   }
 }
+/* ===== MOBILE SUBMENU (COMMODITIES) ===== */
+.has-submenu {
+  width: 100%;
+}
+
+.submenu-toggle {
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submenu {
+  display: none;
+  margin-top: 12px;
+  padding-left: 10px;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: #112240;
+  border: 1px solid #D4AF37;
+  border-radius: 6px;
+  color: #D4AF37;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background: #D4AF37;
+  color: #0a192f;
+}
+
+.submenu.active {
+  display: block;
+}
