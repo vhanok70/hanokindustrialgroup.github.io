@@ -787,3 +787,23 @@ footer{
     margin: 10px 0;
   }
 }
+@media (max-width: 768px) {
+  /* mobile styles */
+}
+
+/* ===========================
+   NAVBAR FIX (GLOBAL)
+   =========================== */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+}
+
+.logo {
+  position: relative;
+  z-index: 1300;
+}
