@@ -156,21 +156,33 @@
 
     <!-- RIGHT : CONTACT -->
     <div class="contact-box">
-      <h3>Sales Inquiry</h3>
+  <h3 style="color:#c62828;">Sales Inquiry</h3>
 
-      <form id="inquiryForm">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Email Address" required>
-  <input type="tel" name="phone" placeholder="Phone" required>
-  <textarea name="message" placeholder="Message" required></textarea>
+  <form id="inquiryForm">
 
-  <button type="submit">Send Inquiry</button>
-        
-      </form>
-      <div id="formSuccess" class="form-success">
-  <span class="check-icon">✔</span>
-  Sent successfully. We will contact you shortly.
-      </div>
+    <label>Full Name <span class="req">*</span></label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Company Name <span class="req">*</span></label>
+    <input type="text" name="company" placeholder="Company Name" required>
+
+    <label>Email Address <span class="req">*</span></label>
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <label>Phone / WhatsApp <span class="req">*</span></label>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <label>Message / Requirement <span class="req">*</span></label>
+    <textarea name="message" placeholder="Your Requirement" required></textarea>
+
+    <button type="submit">Send Inquiry</button>
+  </form>
+
+  <!-- SUCCESS MESSAGE -->
+  <div id="formSuccess" class="form-success">
+    <span class="check-icon">✔</span>
+    Sent successfully. We will contact you shortly.
+  </div>
     </div>
 
   </div>
