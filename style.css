@@ -1133,3 +1133,25 @@ footer{
   font-size: 13px;
   color: #aaa;
 }
+.footer-contact {
+  margin-top: 15px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #cfd8e3;
+}
+
+.contact-row i {
+  color: #d4af37; /* gold */
+  font-size: 15px;
+  min-width: 18px; /* forces left edge alignment */
+}
+
+.contact-row span {
+  line-height: 1.5;
+}
