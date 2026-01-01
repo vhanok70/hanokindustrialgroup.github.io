@@ -1,69 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Industrial Scrap | Hanok Industrial Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Global sourcing and export of industrial and non-ferrous scrap including aluminium scrap, copper scrap, and mixed industrial scrap.">
 
-  <meta name="description" content="Global supplier of industrial and non-ferrous scrap. Trusted sourcing and export from Hanok Industrial Group." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- SAME CSS -->
-  <link rel="stylesheet" href="../style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- MAIN CSS (IMPORTANT PATH) -->
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
-  <!-- PRODUCT HERO (same class as others) -->
-  <section class="product-hero">
-    <div class="container">
-      <h1>Industrial Scrap</h1>
-      <p>Global sourcing & supply of industrial and non-ferrous scrap</p>
-    </div>
-  </section>
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar">
+  <div class="logo">HANOK <span>INDUSTRIAL</span></div>
 
-  <!-- PRODUCT CONTENT -->
-  <section class="product-details">
-    <div class="container">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about.html">About</a></li>
 
-      <div class="product-grid">
+    <li class="has-submenu">
+      <span class="submenu-toggle">Commodities</span>
+      <ul class="submenu">
+        <li><a href="aluminium-ingots-a7.html">Aluminium Ingots A7</a></li>
+        <li><a href="copper-cathode.html">Copper Cathode</a></li>
+        <li><a href="scrap.html" class="active">Industrial Scrap</a></li>
+      </ul>
+    </li>
 
-        <!-- LEFT : IMAGE -->
-        <div class="product-image">
-          <img src="../assets/images/scrap.jpg" alt="Industrial Scrap">
-        </div>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
 
-        <!-- RIGHT : DETAILS -->
-        <div class="product-info">
-          <h2>Product Overview</h2>
-          <p>
-            Hanok Industrial Group supplies industrial and non-ferrous scrap
-            to global buyers with consistent quality, transparent trade,
-            and reliable logistics.
-          </p>
+  <div class="menu-btn" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
 
-          <h3>Scrap Categories</h3>
-          <ul>
-            <li>Aluminium Scrap</li>
-            <li>Copper Scrap</li>
-            <li>Mixed Industrial Scrap</li>
-            <li>Non-Ferrous Scrap</li>
-          </ul>
+<!-- ================= HERO ================= -->
+<section class="hero hero-product">
+  <div class="hero-content">
+    <h1>Industrial Scrap</h1>
+    <p>Global sourcing & supply of industrial and non-ferrous scrap</p>
+  </div>
+</section>
 
-          <h3>Trade & Delivery</h3>
-          <ul>
-            <li>Bulk supply available</li>
-            <li>FOB / CIF / CFR terms</li>
-            <li>Inspection on request (SGS / BV / Intertek)</li>
-          </ul>
+<!-- ================= PRODUCT DETAILS ================= -->
+<section class="product-details">
+  <div class="container">
 
-          <a href="../index.html#contact" class="btn-primary">
-            Send Inquiry
-          </a>
-        </div>
+    <h2 class="section-title">Product Overview</h2>
+    <p>
+      Hanok Industrial Group supplies industrial and non-ferrous scrap to global buyers with
+      consistent quality, transparent trade practices, and reliable international logistics.
+      We support bulk buyers across Asia, the Middle East, Europe, and global markets.
+    </p>
 
+    <div class="product-grid">
+
+      <!-- LEFT -->
+      <div class="product-info">
+        <h3>Scrap Categories</h3>
+        <ul class="check-list">
+          <li>Aluminium Scrap</li>
+          <li>Copper Scrap</li>
+          <li>Mixed Industrial Scrap</li>
+          <li>Non-Ferrous Scrap</li>
+        </ul>
+
+        <h3>Trade & Delivery</h3>
+        <ul class="check-list">
+          <li>Bulk supply available</li>
+          <li>FOB / CIF / CFR terms</li>
+          <li>Global port delivery</li>
+          <li>Inspection on request (SGS / BV / Intertek)</li>
+        </ul>
       </div>
+
+      <!-- RIGHT -->
+      <div class="product-image">
+        <img src="../assets/scrap.jpg" alt="Industrial Scrap">
+      </div>
+
     </div>
-  </section>
+
+    <div class="cta-center">
+      <a href="../index.html#contact" class="btn-primary">Send Inquiry</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3 class="footer-logo">HANOK INDUSTRIAL GROUP</h3>
+      <ul class="footer-list">
+        <li>Kurnool, Andhra Pradesh, India</li>
+        <li>Serving buyers across Asia, Middle East & Global</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Product Categories</h4>
+      <ul class="footer-list check">
+        <li>Aluminium Ingots A7</li>
+        <li>Copper Cathode</li>
+        <li>Industrial Scrap</li>
+        <li>Non-Ferrous Metals</li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Information</h4>
+      <p><strong>Phone / WhatsApp:</strong><br>+91 7702310750</p>
+      <p><strong>Email:</strong><br>hanokindustrialgroup@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Hanok Industrial Group. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="../main.js"></script>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
