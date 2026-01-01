@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
       },
       function (error) {
-        alert("Failed to send inquiry. Please try again.");
         console.error("EmailJS Error:", error);
+        alert("Failed to send inquiry. Please try again.");
       }
     );
   });
