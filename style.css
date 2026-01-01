@@ -1527,3 +1527,38 @@ footer{
   font-weight: bold;
   margin-right: 6px;
 }
+/* =========================
+   LOGO IMAGE FIX (FINAL)
+   ========================= */
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Text beside logo */
+.logo-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.logo-text span {
+  color: #d4af37;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .site-logo {
+    height: 34px;
+  }
+}
