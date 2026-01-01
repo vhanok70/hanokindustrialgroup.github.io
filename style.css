@@ -1511,3 +1511,69 @@ footer{
   font-size: 18px;
   margin-right: 6px;
 }
+/* ===== RED REQUIRED MARK ===== */
+.req {
+  color: #c62828;
+  font-weight: bold;
+}
+
+/* ===== FORM INPUTS ===== */
+#inquiryForm input,
+#inquiryForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 2px solid #c62828;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Focus */
+#inquiryForm input:focus,
+#inquiryForm textarea:focus {
+  border-color: #8e0000;
+}
+
+/* Labels */
+#inquiryForm label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #b71c1c;
+}
+
+/* Button */
+#inquiryForm button {
+  width: 100%;
+  padding: 13px;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#inquiryForm button:hover {
+  background: #8e0000;
+}
+
+/* ===== SUCCESS MESSAGE (RED CHECK) ===== */
+.form-success {
+  display: none;
+  margin-top: 16px;
+  padding: 12px;
+  border: 2px solid #c62828;
+  color: #c62828;
+  font-weight: 600;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.check-icon {
+  display: inline-block;
+  margin-right: 6px;
+  font-weight: bold;
+}
