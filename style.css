@@ -1037,3 +1037,27 @@ footer{
   background: #c19b2e;
   transform: translateY(-2px);
 }
+/* Compact Sales Inquiry Form */
+.sales-inquiry,
+.contact-form {
+  padding: 20px !important;
+}
+
+.sales-inquiry input,
+.sales-inquiry textarea {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.sales-inquiry textarea {
+  min-height: 90px;
+}
+
+.sales-inquiry .form-group {
+  margin-bottom: 12px;
+}
+
+.sales-inquiry button {
+  padding: 12px;
+  font-size: 15px;
+}
