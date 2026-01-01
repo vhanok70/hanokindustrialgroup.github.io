@@ -1298,7 +1298,7 @@ footer{
   }
 }
 .contact-section {
-  background: linear-gradient(135deg, #2aa3ef, #1b6fd8);
+  background: #f5f7fa;   /* light professional grey */
   padding: 60px 15px;
 }
 
@@ -1306,9 +1306,9 @@ footer{
   max-width: 420px;
   margin: auto;
   background: #ffffff;
-  border-radius: 14px;
-  padding: 30px 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 28px 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .contact-subtitle {
@@ -1343,23 +1343,24 @@ footer{
 
 .contact-form button {
   width: 100%;
-  padding: 14px;
-  background: #0b5ed7;
-  color: #fff;
+  padding: 13px;
+  background: #d4af37;   /* gold – matches your site */
+  color: #111;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  background: #094bb5;
+  background: #c9a633;
 }
 
 .contact-note {
   text-align: center;
   font-size: 14px;
   margin-top: 18px;
-  color: #555;
+  color: #444;
+  line-height: 1.6;
 }
