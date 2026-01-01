@@ -1495,3 +1495,19 @@ footer{
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.form-success {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  background: #e9f9ef;
+  color: #1e7e34;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-success .check-icon {
+  color: #28a745;
+  font-size: 18px;
+  margin-right: 6px;
+}
