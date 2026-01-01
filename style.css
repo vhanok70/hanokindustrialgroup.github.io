@@ -1155,3 +1155,67 @@ footer{
 .contact-row span {
   line-height: 1.5;
 }
+.footer {
+  background: #071a2f;
+  color: #cfd6df;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-title {
+  color: #d4af37;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.footer-contact i {
+  color: #d4af37;
+  min-width: 18px;
+}
+
+.footer-links {
+  margin-top: 25px;
+}
+
+.footer-links h4 {
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  color: #cfd6df;
+  text-decoration: none;
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: #9aa4b2;
+}
