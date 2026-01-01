@@ -156,13 +156,13 @@
     <div class="contact-box">
       <h3>Sales Inquiry</h3>
 
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Phone">
-        <textarea placeholder="Message"></textarea>
+      <form id="inquiryForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
+  <textarea name="message" placeholder="Your Requirement" required></textarea>
 
-        <button type="submit">Send Inquiry</button>
+  <button type="submit">Send Inquiry</button>
       </form>
 
     </div>
@@ -251,5 +251,30 @@
     © 2025 Hanok Industrial Group. All Rights Reserved.
   </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY");
+  })();
+
+  document.getElementById("inquiryForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      this
+    ).then(
+      function() {
+        alert("Inquiry sent successfully!");
+        document.getElementById("inquiryForm").reset();
+      },
+      function(error) {
+        alert("Failed to send inquiry. Try again.");
+      }
+    );
+  });
+</script>
 </body>
         </html>
