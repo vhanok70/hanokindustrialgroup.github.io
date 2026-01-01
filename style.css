@@ -1453,3 +1453,6 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+.direct-contact {
+  display: none !important;
+}
