@@ -251,36 +251,13 @@
     © 2025 Hanok Industrial Group. All Rights Reserved.
   </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-<script>
-  (function(){
-    emailjs.init("YOUR_PUBLIC_KEY");
-  })();
-
-  document.getElementById("inquiryForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "YOUR_SERVICE_ID",
-      "YOUR_TEMPLATE_ID",
-      this
-    ).then(
-      function() {
-        alert("Inquiry sent successfully!");
-        document.getElementById("inquiryForm").reset();
-      },
-      function(error) {
-        alert("Failed to send inquiry. Try again.");
-      }
-    );
-  });
-</script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
   (function () {
     emailjs.init("q8jA1T_Q8N19cTKbw");
   })();
+  <script src="contact.js"></script>
 </script>
 </body>
         </html>
