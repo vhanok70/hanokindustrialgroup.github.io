@@ -1,145 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Industrial Scrap | Hanok Industrial Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Global sourcing and export of industrial and non-ferrous scrap including aluminium scrap, copper scrap, and mixed industrial scrap.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --navy: #0a1f44;
+      --gold: #d4af37;
+      --light: #f5f7fb;
+      --white: #ffffff;
+      --text: #333;
+    }
 
-  <!-- MAIN CSS (IMPORTANT PATH) -->
-  <link rel="stylesheet" href="../style.css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background: var(--navy);
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.3rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .menu {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      padding: 90px 25px;
+      background:
+        linear-gradient(rgba(10,31,68,0.85), rgba(10,31,68,0.85)),
+        url("../images/scrap-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--gold);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ================= CONTAINER ================= */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 22px;
+    }
+
+    /* ================= PRODUCT OVERVIEW ================= */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 50px;
+      height: 4px;
+      background: var(--gold);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .section-desc {
+      text-align: center;
+      max-width: 900px;
+      margin: 30px auto 45px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .overview-card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+    }
+
+    .overview-block h3 {
+      color: var(--navy);
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .list {
+      list-style: none;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* ================= CTA ================= */
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta a {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 34px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: #c9a52e;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 55px 22px 25px;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      margin-top: 25px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav id="navbar">
-  <div class="logo">HANOK <span>INDUSTRIAL</span></div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">HANOK <span>INDUSTRIAL</span></div>
+    <div class="menu">☰</div>
+  </header>
 
-  <ul class="nav-links" id="navLinks">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../about.html">About</a></li>
-
-    <li class="has-submenu">
-      <span class="submenu-toggle">Commodities</span>
-      <ul class="submenu">
-        <li><a href="aluminium-ingots-a7.html">Aluminium Ingots A7</a></li>
-        <li><a href="copper-cathode.html">Copper Cathode</a></li>
-        <li><a href="scrap.html" class="active">Industrial Scrap</a></li>
-      </ul>
-    </li>
-
-    <li><a href="../index.html#contact">Contact</a></li>
-  </ul>
-
-  <div class="menu-btn" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
-</nav>
-
-<!-- ================= HERO ================= -->
-<section class="hero hero-product">
-  <div class="hero-content">
+  <!-- HERO -->
+  <section class="hero">
     <h1>Industrial Scrap</h1>
-    <p>Global sourcing & supply of industrial and non-ferrous scrap</p>
-  </div>
-</section>
+    <p>Global sourcing & supply of non-ferrous scrap</p>
+  </section>
 
-<!-- ================= PRODUCT DETAILS ================= -->
-<section class="product-details">
-  <div class="container">
-
+  <!-- PRODUCT OVERVIEW -->
+  <section class="container">
     <h2 class="section-title">Product Overview</h2>
-    <p>
+
+    <p class="section-desc">
       Hanok Industrial Group supplies industrial and non-ferrous scrap to global buyers with
       consistent quality, transparent trade practices, and reliable international logistics.
-      We support bulk buyers across Asia, the Middle East, Europe, and global markets.
+      We support bulk buyers across Asia, the Middle East, Europe, and worldwide markets.
     </p>
 
-    <div class="product-grid">
-
-      <!-- LEFT -->
-      <div class="product-info">
+    <div class="overview-card">
+      <div class="overview-block">
         <h3>Scrap Categories</h3>
-        <ul class="check-list">
+        <ul class="list">
           <li>Aluminium Scrap</li>
           <li>Copper Scrap</li>
           <li>Mixed Industrial Scrap</li>
           <li>Non-Ferrous Scrap</li>
         </ul>
+      </div>
 
+      <div class="overview-block">
         <h3>Trade & Delivery</h3>
-        <ul class="check-list">
+        <ul class="list">
           <li>Bulk supply available</li>
           <li>FOB / CIF / CFR terms</li>
           <li>Global port delivery</li>
           <li>Inspection on request (SGS / BV / Intertek)</li>
         </ul>
       </div>
-
-      <!-- RIGHT -->
-      <div class="product-image">
-        <img src="../assets/scrap.jpg" alt="Industrial Scrap">
-      </div>
-
     </div>
 
-    <div class="cta-center">
-      <a href="../index.html#contact" class="btn-primary">Send Inquiry</a>
+    <div class="cta">
+      <a href="../index.html#contact">Send Inquiry</a>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <h3>HANOK INDUSTRIAL GROUP</h3>
+    <p>Kurnool, Andhra Pradesh, India</p>
+    <p>Serving buyers across Asia, Middle East & Global</p>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <div class="footer-col">
-      <h3 class="footer-logo">HANOK INDUSTRIAL GROUP</h3>
-      <ul class="footer-list">
-        <li>Kurnool, Andhra Pradesh, India</li>
-        <li>Serving buyers across Asia, Middle East & Global</li>
-      </ul>
+    <div class="copyright">
+      © 2025 Hanok Industrial Group. All Rights Reserved.
     </div>
-
-    <div class="footer-col">
-      <h4>Product Categories</h4>
-      <ul class="footer-list check">
-        <li>Aluminium Ingots A7</li>
-        <li>Copper Cathode</li>
-        <li>Industrial Scrap</li>
-        <li>Non-Ferrous Metals</li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <h4>Contact Information</h4>
-      <p><strong>Phone / WhatsApp:</strong><br>+91 7702310750</p>
-      <p><strong>Email:</strong><br>hanokindustrialgroup@gmail.com</p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 Hanok Industrial Group. All Rights Reserved.
-  </div>
-</footer>
-
-<!-- ================= SCRIPTS ================= -->
-<script src="../main.js"></script>
-
-<script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-</script>
+  </footer>
 
 </body>
 </html>
