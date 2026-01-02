@@ -409,6 +409,29 @@
   <footer>
     © 2025 Hanok Industrial Group. All Rights Reserved.
   </footer>
+<script>
+  const openBtn = document.getElementById("openInquiry");
+  const formBox = document.getElementById("inlineInquiry");
+  const form = document.getElementById("inquiryForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const successBox = document.getElementById("formSuccess");
 
+  openBtn.addEventListener("click", () => {
+    formBox.style.display = "block";
+    formBox.scrollIntoView({ behavior: "smooth" });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    submitBtn.classList.add("loading");
+
+    setTimeout(() => {
+      submitBtn.classList.remove("loading");
+      form.reset();
+      successBox.style.display = "block";
+    }, 1500);
+  });
+</script>
 </body>
 </html>
