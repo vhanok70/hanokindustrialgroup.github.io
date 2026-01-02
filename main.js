@@ -83,29 +83,21 @@ window.addEventListener("scroll", () => {
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
-  const mobileNav = document.getElementById("mobileNav");
+  const navLinks = document.querySelector(".nav-links");
 
-  if (!menuBtn || !mobileNav) return;
+  if (!menuBtn || !navLinks) return;
 
   menuBtn.addEventListener("click", () => {
-    mobileNav.classList.toggle("active");
+    navLinks.classList.toggle("active");
   });
 
-  // Close menu when any link is clicked
-  document.querySelectorAll(".mobile-nav a").forEach(link => {
+  document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
-      mobileNav.classList.remove("active");
+      navLinks.classList.remove("active");
     });
   });
-});
-// Hide mobile menu on scroll
-window.addEventListener("scroll", () => {
-  const mobileNav = document.getElementById("mobileNav");
-  if (mobileNav) {
-    mobileNav.classList.remove("active");
-  }
 });
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.querySelector(".menu-btn");
