@@ -416,6 +416,48 @@
 <footer>
   © 2025 Hanok Industrial Group. All Rights Reserved.
 </footer>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("q8jA1T_Q8N19cTKbw");
+})();
+</script>
+
+<script>
+const openBtn = document.getElementById("openInquiry");
+const formBox = document.getElementById("inlineInquiry");
+const form = document.getElementById("inquiryForm");
+const submitBtn = document.getElementById("submitBtn");
+const successBox = document.getElementById("formSuccess");
+
+openBtn.addEventListener("click", () => {
+  formBox.style.display = "block";
+  formBox.scrollIntoView({ behavior: "smooth" });
+});
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  submitBtn.classList.add("loading");
+
+  emailjs.sendForm(
+    "service_qvezi7w",
+    "template_zgmufr1",
+    form
+  ).then(
+    function() {
+      submitBtn.classList.remove("loading");
+      form.reset();
+      successBox.style.display = "block";
+    },
+    function(error) {
+      submitBtn.classList.remove("loading");
+      alert("Email failed. Please try again.");
+      console.error(error);
+    }
+  );
+});
+        </script>
 
 </body>
 </html>
