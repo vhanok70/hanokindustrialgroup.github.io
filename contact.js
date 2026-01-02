@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // 🔹 Initialize EmailJS
-  emailjs.init("8jAIT_QBN19cTKbw");   // <-- your public key
+  emailjs.init("q8jA1T_Q8N19cTKbw");   // <-- your public key
 
   // 🔹 Elements
   const form = document.getElementById("inquiryForm");
