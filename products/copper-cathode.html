@@ -207,6 +207,75 @@
         margin-left:15px;
       }
     }
+    .logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-logo {
+  height: 40px;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.logo-text span {
+  color: #d4af37;
+}
+
+.btn {
+  background: #d4af37;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b8962e;
+}
+
+#submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.btn-loader {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+#submitBtn.loading .btn-text {
+  display: none;
+}
+
+#submitBtn.loading .btn-loader {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.form-success {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  background: #eaffea;
+  color: #0a7a3c;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
   </style>
 </head>
 
@@ -308,6 +377,7 @@
 </div>
 
 <!-- Inspection & Documentation -->
+<!-- Inspection & Documentation -->
 <div class="side-box">
   <h4>Inspection & Documentation</h4>
   <ul>
@@ -316,11 +386,30 @@
     <li>Certificate of Origin (COO)</li>
     <li>Commercial Invoice & Packing List</li>
   </ul>
-
-  <a href="#contact" class="btn">Send Inquiry</a>
 </div>
 
+<!-- SEND INQUIRY BUTTON (ADD HERE) -->
+<button class="btn" id="openInquiry">Send Inquiry</button>
+
+<!-- INLINE INQUIRY FORM (PASTE BELOW BUTTON) -->
+<div id="inlineInquiry" class="inline-inquiry" style="display:none;">
+  <form id="inquiryForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="company" placeholder="Company Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
+    <textarea name="message" placeholder="Your Requirement" required></textarea>
+
+    <button type="submit" id="submitBtn" class="btn">
+      <span class="btn-text">Submit</span>
+      <span class="btn-loader"></span>
+    </button>
+  </form>
+
+  <div id="formSuccess" class="form-success">
+    ✔ Sent successfully. We will contact you shortly.
   </div>
+</div>
 </section>
 
 <!-- FOOTER -->
