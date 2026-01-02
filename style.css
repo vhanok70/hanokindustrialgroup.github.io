@@ -823,6 +823,9 @@ footer{
 .logo {
   position: relative;
   z-index: 1301;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* controls space between icon and text */
 }
 
 /* Mobile menu should NOT cover navbar */
@@ -831,6 +834,9 @@ footer{
 }
 .logo span {
   color: #c9a227;
+  letter-spacing: 0 !important;
+  word-spacing: 0;
+  white-space: nowrap;
 }
 /* =========================
    NAVBAR HIDE ON SCROLL
@@ -1711,3 +1717,9 @@ header {
   width: 100%;
   z-index: 3000;
 } 
+@media (max-width: 768px) {
+  .logo span {
+    letter-spacing: 0 !important;
+    word-spacing: 0;
+  }
+}
