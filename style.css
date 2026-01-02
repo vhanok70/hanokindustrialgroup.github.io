@@ -1758,3 +1758,45 @@ header {
   margin-left: 0;
   padding-left: 0;
 }
+/* ===== LOGO SIZE ADJUST (MOBILE + DESKTOP) ===== */
+
+/* Logo wrapper */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo image */
+.site-logo {
+  height: 38px; /* ⬅ reduce logo icon size */
+  width: auto;
+}
+
+/* Logo text */
+.logo-text {
+  font-size: 18px;        /* ⬅ reduced from big size */
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+/* INDUSTRIAL highlight */
+.logo-text span {
+  font-size: 18px;
+}
+
+/* 📱 Mobile specific (important) */
+@media (max-width: 768px) {
+  .site-logo {
+    height: 32px;        /* smaller icon on mobile */
+  }
+
+  .logo-text {
+    font-size: 16px;     /* perfect mobile size */
+  }
+
+  .logo-text span {
+    font-size: 16px;
+  }
+}
