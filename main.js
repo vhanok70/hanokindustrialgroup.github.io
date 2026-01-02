@@ -99,3 +99,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.querySelector(".menu-btn");
+  const mobileNav = document.getElementById("mobileNav");
+
+  if (!menuBtn || !mobileNav) return;
+
+  menuBtn.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+
+  // Close menu when any link is clicked
+  document.querySelectorAll(".mobile-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+    });
+  });
+});
