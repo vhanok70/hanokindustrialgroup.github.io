@@ -1,32 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("q8jA1T_Q8N19cTKbw");
 
+  // 🔹 Initialize EmailJS
+  emailjs.init("8jAIT_QBN19cTKbw");   // <-- your public key
+
+  // 🔹 Elements
   const form = document.getElementById("inquiryForm");
   const successBox = document.getElementById("formSuccess");
+  const submitBtn = document.getElementById("submitBtn");
 
-  if (!form) {
-    console.error("Form not found");
+  // 🔹 Safety check
+  if (!form || !submitBtn) {
+    console.error("Form or Submit button not found");
     return;
   }
 
+  // 🔹 Submit handler
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_qvezi7w",
-        "template_zgmufr1",
-        this
-      )
-      .then(
-        function () {
-          form.reset();
-          successBox.style.display = "block"; // ✅ SHOW SUCCESS
-        },
-        function (error) {
-          alert("Failed to send inquiry. Please try again.");
-          console.error("EmailJS Error:", error);
-        }
-      );
+    // START loading
+    submitBtn.classList.add("loading");
+
+    // 🔹 Send email
+    emailjs.sendForm(
+      "service_qvezi7w",        // <-- your service ID
+      "template_zgmufr1",       // <-- your template ID
+      this
+    ).then(
+      function () {
+        // STOP loading
+        submitBtn.classList.remove("loading");
+
+        // Reset form
+        form.reset();
+
+        // Show success message
+        successBox.style.display = "block";
+      },
+      function (error) {
+        // STOP loading
+        submitBtn.classList.remove("loading");
+
+        alert("Failed to send inquiry. Please try again.");
+        console.error("EmailJS Error:", error);
+      }
+    );
   });
+
 });
