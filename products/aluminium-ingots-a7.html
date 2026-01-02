@@ -254,6 +254,27 @@
   align-items: center;
   justify-content: center;
 }
+    /* ================= BUTTON STYLE FIX ================= */
+.btn,
+#submitBtn {
+  background: #d4af37;
+  color: #111;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* remove black edge */
+  box-shadow: 0 4px 0 #b8962e;
+}
+
+/* press effect */
+.btn:active,
+#submitBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #b8962e;
+}
 
 .btn-loader {
   display: none;
