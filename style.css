@@ -1584,16 +1584,23 @@ footer{
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-/* ===== Mobile Menu ===== */
+/* ==== Mobile Menu (FIXED) ==== */
 .mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: #0b1f33;
-  position: absolute;
-  top: 70px;
+  position: fixed;
+  top: 70px; /* below header */
   left: 0;
   width: 100%;
-  z-index: 999;
+  height: calc(100vh - 70px);
+  background: #0a1d2f;
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.mobile-nav.active {
+  display: flex;
 }
 
 .mobile-nav a {
@@ -1702,5 +1709,5 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 3000;
 }
