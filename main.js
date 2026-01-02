@@ -108,6 +108,17 @@ document.addEventListener("DOMContentLoaded", function () {
   menuBtn.addEventListener("click", () => {
     mobileNav.classList.toggle("active");
   });
+   // ✅ Hide mobile menu on scroll
+window.addEventListener("scroll", () => {
+  mobileNav.classList.remove("active");
+});
+
+// ✅ Hide menu when link clicked
+document.querySelectorAll(".mobile-nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("active");
+  });
+});
 
   // Close menu when any link is clicked
   document.querySelectorAll(".mobile-nav a").forEach(link => {
