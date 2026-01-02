@@ -303,14 +303,19 @@
   display: flex;
   margin: 0 auto;   /* THIS centers the button */
 }
-    .site-logo {
-  height: 42px;
-  width: auto;
-  display: block;
+    .logo {
+  display: flex;
+  align-items: center;
 }
 
+.logo img {
+  height: 42px;
+  width: auto;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  .site-logo {
+  .logo img {
     height: 34px;
   }
 }
