@@ -1723,3 +1723,23 @@ header {
     word-spacing: 0;
   }
 }
+/* ==== FORCE LOGO TEXT SPACING FIX ==== */
+.logo,
+.logo span,
+.logo a {
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* If logo text is uppercase, keep uppercase but no gap */
+.logo span {
+  text-transform: uppercase;
+}
+
+/* Ensure logo layout stays tight */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* space only between icon and text */
+}
