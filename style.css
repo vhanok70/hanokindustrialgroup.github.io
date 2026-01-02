@@ -1584,31 +1584,31 @@ footer{
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-/* ==== Mobile Menu (FIXED) ==== */
+/* ==== Mobile Menu (COMPACT DROPDOWN) ==== */
 .mobile-nav {
   position: fixed;
   top: 70px; /* below header */
   left: 0;
   width: 100%;
-  height: calc(100vh - 70px);
   background: #0a1d2f;
   z-index: 2000;
   display: none;
   flex-direction: column;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.mobile-nav.active {
-  display: flex;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .mobile-nav a {
-  padding: 15px;
+  padding: 14px 20px;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 16px;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
 }
 
 .mobile-nav a:hover {
