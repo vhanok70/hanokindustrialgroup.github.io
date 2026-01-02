@@ -1562,3 +1562,25 @@ footer{
     height: 34px;
   }
 }
+/* loading spinner */
+.btn-loader {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+#submitBtn.loading .btn-text {
+  display: none;
+}
+
+#submitBtn.loading .btn-loader {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
