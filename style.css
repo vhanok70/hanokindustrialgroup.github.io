@@ -1743,3 +1743,18 @@ header {
   align-items: center;
   gap: 4px; /* space only between icon and text */
 }
+/* ===== LOGO TEXT FINAL FIX ===== */
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+  white-space: nowrap;
+}
+
+.logo-text span {
+  letter-spacing: 0 !important;
+  margin-left: 0;
+  padding-left: 0;
+}
