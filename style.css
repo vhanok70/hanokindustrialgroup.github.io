@@ -1800,3 +1800,115 @@ header {
     font-size: 16px;
   }
 }
+/* ================= HOW WE WORK ================= */
+.how-we-work {
+  background: #ffffff;
+  padding: 80px 8%;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.how-we-work h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0a192f;
+  margin-bottom: 40px;
+}
+
+.how-we-work ol {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.how-we-work li {
+  background: #f5f7fa;
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.how-we-work li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: #d4af37;
+  color: #0a192f;
+  font-weight: 800;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= EXPORT DOCUMENTATION ================= */
+.export-docs {
+  background: #0a192f;
+  padding: 80px 8%;
+  color: #ffffff;
+}
+
+.export-docs h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.export-docs ul {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.export-docs li {
+  background: rgba(255,255,255,0.08);
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 36px;
+}
+
+.export-docs li::before {
+  content: "✔";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 900px) {
+
+  .how-we-work ol {
+    grid-template-columns: 1fr;
+  }
+
+  .export-docs ul {
+    grid-template-columns: 1fr;
+  }
+
+  .how-we-work,
+  .export-docs {
+    padding: 60px 20px;
+  }
+}
